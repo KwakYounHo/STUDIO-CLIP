@@ -1,0 +1,150 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+/* ----- header ----- */
+
+header {
+  width: 100vw;
+  height: 100px;
+  background-color: #e5e5e5;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+header .logo {
+  min-width: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+header .logo a {
+  display: flex;
+  flex-direction: column;
+}
+
+header .logo a h1 {
+  display: inline-block;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+header .logo a h2 {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 16px;
+  margin-left: 1px;
+}
+
+header .nav {
+  text-transform: uppercase;
+  display: flex;
+  gap: 2rem;
+}
+
+header .social {
+  display: flex;
+  gap: 1rem;
+}
+
+header .social img {
+  border-radius: 20%;
+  box-shadow: 1px 1px 2px black;
+}
+
+/* ----- Main ----- */
+
+#main {
+  width: 100vw;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  position: relative;
+  top: 84px;
+}
+
+#main .title {
+  color: white;
+}
+
+#main .title .mainTitle {
+  font-size: 100px;
+  line-height: 60px;
+}
+
+#main .title .subTitle {
+  font-size: 40px;
+  letter-spacing: 45px;
+  margin-left: 5px;
+}
+
+#main .socialMenu {
+  font-size: 50px;
+  text-transform: uppercase;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  color: white;
+}
+
+#main .socialMenu a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ----- footer ----- */
+footer {
+  width: 100vw;
+  padding: 20px;
+  background-color: #e5e5e5;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
