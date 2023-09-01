@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Koulen, Inter } from 'next/font/google'
-import Link from 'next/link'
-import Image from 'next/image'
+
+import StudioHeader from '@comp/Header/Header'
+import StudioFooter from '@comp/Footer/Footer'
 
 const koulen = Koulen({
   subsets: ['latin'],
@@ -26,69 +27,9 @@ export default function RootLayout({
   return (
     <html lang="my">
       <body>
-        <header>
-          <div className="logo">
-            <Link href='/'>
-              <h1 className={`${koulen.className} mainTitle`}>STUDIO CLIP</h1>
-              <h2 className={`${koulen.className} subTitle`}>Myanmar</h2>
-            </Link>
-          </div>
-          <button title='hamburgerToggle'><Image src='/hamburger.svg' width={30} height={30} alt='hamburger' /></button>
-          <div className={`${inter.className} nav uppercase`}>
-            <Link href='/about'>about us</Link>
-            <Link href='#'>사업분야</Link>
-            <Link href='#'>portfolio</Link>
-            <Link href='#'>contact us</Link>
-          </div>
-          <div className="social">
-            <Link href='#'>
-              <div className='baseImage'>
-                <Image src='/instar_50px.png' width={50} height={50} alt='instargram' />
-              </div>
-              <div className='hoverImage'>
-                <Image src='/instar_color.png' width={50} height={50} alt='instargram' />
-              </div>
-            </Link>
-            <Link href='https://www.facebook.com/profile.php?id=61550583410087' target='blank'>
-              <div className='baseImage'>
-                <Image src='/facebook_50px.png' width={50} height={50} alt='facebook' />
-              </div>
-              <div className='hoverImage'>
-                <Image src='/facebook_color.png' width={50} height={50} alt='facebook' />
-              </div>
-            </Link>
-            <Link href='#'>
-              <div className='baseImage'>
-                <Image src='/youtube_50px.png' width={50} height={50} alt='youtube' />
-              </div>
-              <div className='hoverImage'>
-                <Image src='/youtube_color.png' width={50} height={50} alt='youtube' />
-              </div>
-            </Link>
-            <Link href='#'>
-              <div className='baseImage'>
-                <Image src='/tiktok_50px.png' width={50} height={50} alt='tiktok' />
-              </div>
-              <div className='hoverImage'>
-                <Image src='/tiktok_color.png' width={50} height={50} alt='tiktok' />
-              </div>
-            </Link>
-          </div>
-        </header>
+        <StudioHeader />
         {children}
-        <footer>
-          <div className={`${inter.className} COinfo`}>
-            <p>
-              STUDIO CLIP Corp.
-            </p>
-            <p>
-              Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon, Myanmar
-            </p>
-            <p>
-              <a href="http://studioclip.video" title="STUDIO CLIP">http://studioclip.video</a> | +09 88413 9136
-            </p>
-          </div>
-        </footer>
+        <StudioFooter />
       </body>
     </html>
   )
