@@ -20,7 +20,7 @@ export default function Home() {
       </div>
       <div className={`${inter.className} socialMenu`}>
         <Link href='#'>instar</Link>
-        <Link href='#'>facebook</Link>
+        <Link href='https://www.facebook.com/profile.php?id=61550583410087' target='blank'>facebook</Link>
         <Link href='#'>youtube</Link>
         <Link href='#'>tiktok</Link>
       </div>
