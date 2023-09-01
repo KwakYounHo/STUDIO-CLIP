@@ -33,6 +33,7 @@ export default function RootLayout({
               <h2 className={`${koulen.className} subTitle`}>Myanmar</h2>
             </Link>
           </div>
+          <button><Image src='/hamburger.svg' width={30} height={30} alt='hamburger' /></button>
           <div className={`${inter.className} nav`}>
             <Link href='/about'>about</Link>
             <Link href='#'>사업분야</Link>
@@ -40,18 +41,53 @@ export default function RootLayout({
             <Link href='#'>contact</Link>
           </div>
           <div className="social">
-            <Link href='#'><div className="socialBox"><Image src='/instar_50px.png' width={50} height={50} alt='instargram' /></div></Link>
-            <Link href='#'><div className="socialBox"><Image src='/facebook_50px.png' width={50} height={50} alt='facebook' /></div></Link>
-            <Link href='#'><div className="socialBox"><Image src='/youtube_50px.png' width={50} height={50} alt='youtube' /></div></Link>
-            <Link href='#'><div className="socialBox"><Image src='/tiktok_50px.png' width={50} height={50} alt='tiktok' /></div></Link>
+            <Link href='#'>
+              <div className='baseImage'>
+                <Image src='/instar_50px.png' width={50} height={50} alt='instargram' />
+              </div>
+              <div className='hoverImage'>
+                <Image src='/instar_color.png' width={50} height={50} alt='instargram' />
+              </div>
+            </Link>
+            <Link href='https://www.facebook.com/profile.php?id=61550583410087' target='blank'>
+              <div className='baseImage'>
+                <Image src='/facebook_50px.png' width={50} height={50} alt='facebook' />
+              </div>
+              <div className='hoverImage'>
+                <Image src='/facebook_color.png' width={50} height={50} alt='facebook' />
+              </div>
+            </Link>
+            <Link href='#'>
+              <div className='baseImage'>
+                <Image src='/youtube_50px.png' width={50} height={50} alt='youtube' />
+              </div>
+              <div className='hoverImage'>
+                <Image src='/youtube_color.png' width={50} height={50} alt='youtube' />
+              </div>
+            </Link>
+            <Link href='#'>
+              <div className='baseImage'>
+                <Image src='/tiktok_50px.png' width={50} height={50} alt='tiktok' />
+              </div>
+              <div className='hoverImage'>
+                <Image src='/tiktok_color.png' width={50} height={50} alt='tiktok' />
+              </div>
+            </Link>
           </div>
         </header>
         {children}
         <footer>
-          <p className={`${inter.className}`}>
-            STUDIO CLIP Corp.<br />Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon, Myanmar
-            http://studioclip.video | +09 88413 9136
-          </p>
+          <div className={`${inter.className} COinfo`}>
+            <p>
+              STUDIO CLIP Corp.
+            </p>
+            <p>
+              Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon, Myanmar
+            </p>
+            <p>
+              <a href="http://studioclip.video" title="STUDIO CLIP">http://studioclip.video</a> | +09 88413 9136
+            </p>
+          </div>
         </footer>
       </body>
     </html>
