@@ -91,14 +91,6 @@ body {
   transition: transform 200ms;
 }
 
-/*? ----- common footer ----- */
-footer {
-  width: 100vw;
-  background-color: var(--menuColor);
-  font-size: 0.7rem;
-  padding: 1rem;
-}
-
 /*! --------------------------------- */
 
 /** ----- mobile ----- */
@@ -137,7 +129,6 @@ footer {
 /** ----- PC ----- */
 @media screen and (min-width: 1024px) {
   /*? ----- PC Main ----- */
-  
   #main {
     height: calc(100vh - 1rem);
     gap: 5rem;
@@ -147,7 +138,4 @@ footer {
     font-size: 2.5rem;
     gap: 3rem;
   }
-  
-  
-  /*? ----- PC footer ----- */
 }
