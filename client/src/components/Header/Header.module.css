@@ -1,0 +1,93 @@
+/*! ----- common ----- */
+.header {
+  width: 100vw;
+  background-color: var(--menuColor);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header a {
+  text-decoration: none;
+  color: var(--menuTextColor);
+}
+
+/*? ----- common logo ----- */
+.mainTitle {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.subTitle {
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0.8rem;
+  margin-left: 0.1rem;
+}
+
+/*? ----- common nav ----- */
+.nav {
+  display: flex;
+}
+
+/*? ----- common social ----- */
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social a {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.social img {
+  border-radius: 20%;
+  box-shadow: 1px 1px 2px black;
+  position: absolute;
+}
+
+.hoverImage {
+  opacity: 0;
+}
+
+.social a:hover {
+  transform: scale(1.05);
+  transition: transform 200ms;
+}
+
+.social a:hover .baseImage {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.social a:hover .hoverImage {
+  opacity: 100;
+  transition: opacity 200ms;
+}
+
+/*! ----- mobile ----- */
+@media screen and (max-width: 767px) {
+
+}
+
+/*! ----- tablet ----- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/*! ----- PC ----- */
+@media screen and (min-width: 1024px) {
+  /*? ----- PC nav ----- */
+  .nav {
+    gap: 2rem;
+  }
+  
+  /*? ----- PC social ----- */
+  .social {
+    gap: 1rem;
+  }
+}

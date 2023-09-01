@@ -48,78 +48,6 @@ body {
   background-color: var(--bgColor);
 }
 
-/*? ----- common header ----- */
-header {
-  width: 100vw;
-  background-color: var(--menuColor);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
-}
-
-header a {
-  text-decoration: none;
-  color: var(--menuTextColor);
-}
-
-header .logo {
-  display: flex;
-  justify-content: center;
-}
-
-header .logo h1 {
-  font-size: 2rem;
-  line-height: 2rem;
-
-}
-header .logo h2 {
-  font-size: 1rem;
-  line-height: 1rem;
-  letter-spacing: 0.8rem;
-}
-
-header .nav {
-  display: flex;
-}
-
-header .social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header .social a {
-  position: relative;
-  width: 50px;
-  height: 50px;
-}
-
-header .social img {
-  border-radius: 20%;
-  box-shadow: 1px 1px 2px black;
-  position: absolute;
-}
-
-header .social .hoverImage {
-  opacity: 0;
-}
-
-header .social a:hover {
-  transform: scale(1.05);
-  transition: transform 200ms;
-}
-
-header .social a:hover .baseImage {
-  opacity: 0;
-  transition: opacity 200ms;
-}
-
-header .social a:hover .hoverImage {
-  opacity: 100;
-  transition: opacity 200ms;
-}
-
 /*? ----- common main ----- */
 #main {
   width: 100vw;
@@ -237,35 +165,8 @@ footer {
 /** ----- PC ----- */
 @media screen and (min-width: 1024px) {
   /*? ----- PC header ----- */
-  header .logo {
-    min-width: 180px;
-  }
-  
-  header .logo a {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header .logo a h1 {
-    display: inline-block;
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-  
-  header .logo a h2 {
-    margin-left: 0rem;
-  }
-
   header button {
     display: none;
-  }
-  
-  header .nav {
-    gap: 2rem;
-  }
-  
-  header .social {
-    gap: 1rem;
   }
   
   /*? ----- PC Main ----- */
