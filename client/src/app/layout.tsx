@@ -33,12 +33,12 @@ export default function RootLayout({
               <h2 className={`${koulen.className} subTitle`}>Myanmar</h2>
             </Link>
           </div>
-          <button><Image src='/hamburger.svg' width={30} height={30} alt='hamburger' /></button>
-          <div className={`${inter.className} nav`}>
-            <Link href='/about'>about</Link>
+          <button title='hamburgerToggle'><Image src='/hamburger.svg' width={30} height={30} alt='hamburger' /></button>
+          <div className={`${inter.className} nav uppercase`}>
+            <Link href='/about'>about us</Link>
             <Link href='#'>사업분야</Link>
             <Link href='#'>portfolio</Link>
-            <Link href='#'>contact</Link>
+            <Link href='#'>contact us</Link>
           </div>
           <div className="social">
             <Link href='#'>
