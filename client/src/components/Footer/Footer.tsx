@@ -1,6 +1,8 @@
 import { NextFont } from 'next/dist/compiled/@next/font'
 import { Inter } from 'next/font/google'
 
+import styles from '@/components/Footer/Footer.module.css'
+
 const inter: NextFont = Inter({
   subsets: ['latin'],
   weight: ['400']
@@ -9,7 +11,7 @@ const inter: NextFont = Inter({
 export default function StudioFooter() {
   return (
     <footer>
-          <div className={`${inter.className} COinfo`}>
+          <div className={`${inter.className} ${styles.footer}`}>
             <p>
               STUDIO CLIP Corp.
             </p>

@@ -1,0 +1,6 @@
+.footer {
+  width: 100vw;
+  background-color: var(--menuColor);
+  font-size: 0.7rem;
+  padding: 1rem;
+}
