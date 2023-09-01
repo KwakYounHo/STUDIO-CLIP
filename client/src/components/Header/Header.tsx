@@ -23,7 +23,7 @@ export default function StudioHeader() {
               <h2 className={`${koulen.className} ${styles.subTitle}`}>Myanmar</h2>
             </Link>
           </div>
-          <button title='hamburgerToggle'>
+          <button title='hamburgerToggle' className={styles.hamburger}>
             <Image src='/hamburger.svg' width={30} height={30} alt='hamburger' />
             </button>
           <div className={`${inter.className} ${styles.nav} uppercase`}>
