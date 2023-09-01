@@ -103,11 +103,6 @@ footer {
 
 /** ----- mobile ----- */
 @media screen and (max-width: 767px) {
-  /*? ----- mobile header ----- */
-  header .nav, header .social {
-    display: none;
-  }
-
   /*? ----- mobile main ----- */
   #main {
     gap: 4rem;
@@ -126,29 +121,6 @@ footer {
 
 /** ----- tablet ----- */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  /*? ----- tablet header ----- */
-  header button {
-    display: none;
-  }
-
-  header .nav {
-    gap: 1rem;
-  }
-
-  header .social {
-    gap: 0.5rem;
-  }
-
-  header .social a {
-    width: 35px;
-    height: 35px;
-  }
-
-  header .social img {
-    width: 35px;
-    height: 35px;
-  }
-
   /*? ----- tablet main ----- */
   #main {
     gap: 4rem;
@@ -164,11 +136,6 @@ footer {
 
 /** ----- PC ----- */
 @media screen and (min-width: 1024px) {
-  /*? ----- PC header ----- */
-  header button {
-    display: none;
-  }
-  
   /*? ----- PC Main ----- */
   
   #main {
