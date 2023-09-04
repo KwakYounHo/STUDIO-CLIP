@@ -3,7 +3,7 @@
 import { Koulen, Inter } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '@comp/Header/Header.module.css'
+import { header } from '@/app/models/header/header'
 
 const koulen = Koulen({
   subsets: ['latin'],
@@ -16,55 +16,47 @@ const inter = Inter({
 
 export default function StudioHeader() {
   return (
-    <header className={`${styles.header}`}>
-          <div className='logo'>
+    <header className={'bg-[var(--menuColor)] flex place-content-around select-none'}>
+          {/* logo */}
+          <div className={'logo p-2'}>
             <Link href='/'>
-              <h1 className={`${koulen.className} ${styles.mainTitle}`}>STUDIO CLIP</h1>
-              <h2 className={`${koulen.className} ${styles.subTitle}`}>Myanmar</h2>
+              <h1 className={`${koulen.className} text-3xl leading-1`}>STUDIO CLIP</h1>
+              <h2 className={`${koulen.className} text-xl tracking-[0.6rem] leading-none`}>Myanmar</h2>
             </Link>
           </div>
-          <button title='hamburgerToggle' className={styles.hamburger}>
+          {/* hamburger menu */}
+          <button title='hamburgerToggle' className={'md:hidden'}>
             <Image src='/hamburger.svg' width={30} height={30} alt='hamburger' />
             </button>
-          <div className={`${inter.className} ${styles.nav} uppercase`}>
-            <Link href='/about'>about us</Link>
-            <Link href='#'>사업분야</Link>
-            <Link href='#'>portfolio</Link>
-            <Link href='#'>contact us</Link>
-          </div>
-          <div className={`${styles.social}`}>
-            <Link href='#'>
-              <div className={`${styles.baseImage}`}>
-                <Image src='/instar_50px.png' width={50} height={50} alt='instargram' />
-              </div>
-              <div className={`${styles.hoverImage}`}>
-                <Image src='/instar_color.png' width={50} height={50} alt='instargram' />
-              </div>
-            </Link>
-            <Link href='https://www.facebook.com/profile.php?id=61550583410087' target='blank'>
-              <div className={`${styles.baseImage}`}>
-                <Image src='/facebook_50px.png' width={50} height={50} alt='facebook' />
-              </div>
-              <div className={`${styles.hoverImage}`}>
-                <Image src='/facebook_color.png' width={50} height={50} alt='facebook' />
-              </div>
-            </Link>
-            <Link href='#'>
-              <div className={`${styles.baseImage}`}>
-                <Image src='/youtube_50px.png' width={50} height={50} alt='youtube' />
-              </div>
-              <div className={`${styles.hoverImage}`}>
-                <Image src='/youtube_color.png' width={50} height={50} alt='youtube' />
-              </div>
-            </Link>
-            <Link href='#'>
-              <div className={`${styles.baseImage}`}>
-                <Image src='/tiktok_50px.png' width={50} height={50} alt='tiktok' />
-              </div>
-              <div className={`${styles.hoverImage}`}>
-                <Image src='/tiktok_color.png' width={50} height={50} alt='tiktok' />
-              </div>
-            </Link>
+          {/* navigation */}
+          <nav className={`${inter.className} uppercase hidden md:flex items-center space-x-5`}>
+            {header.nav.map(element => {
+              return <Link href={element.url} key={element.id}>{element.title}</Link>
+            })}
+          </nav>
+          {/* social icons */}
+          <div className={'hidden md:flex md:space-x-2 items-center'}>
+            {header.social.map(element => {
+              return (
+              <Link href={element.url} key={element.id} className={'relative w-[50px] h-[50px] hover:scale-105 group duration-300'}>
+                {<div>
+                  <Image
+                    src={element.blackIcon}
+                    width={element.width}
+                    height={element.height}
+                    alt={element.id}
+                    className={'rounded-lg absolute group-hover:opacity-0 duration-300'}
+                  />
+                  <Image
+                    src={element.colorIcon}
+                    width={element.width}
+                    height={element.height}
+                    alt={element.id}
+                    className={'rounded-lg opacity-0 absolute group-hover:opacity-100 duration-300'}
+                  />
+                </div>}
+              </Link>)
+            })}
           </div>
         </header>
   )
