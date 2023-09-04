@@ -6,8 +6,8 @@ export const header = {
       url: '/about'
     },
     {
-      id: '사업분야',
-      title: '사업분야',
+      id: 'ourWork',
+      title: 'our work',
       url: '#'
     },
     {
