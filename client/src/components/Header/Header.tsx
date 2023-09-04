@@ -1,9 +1,9 @@
-"use client"
-
 import { Koulen, Inter } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import { header } from '@/models/header/header'
+import HamburgerMenu from '@/components/Header/utils/Hamburger/hamburger'
+import Logo from '@comp/Header/Adapter/Logo'
 
 const koulen = Koulen({
   subsets: ['latin'],
@@ -14,20 +14,16 @@ const inter = Inter({
   weight: ['400']
 })
 
+
 export default function StudioHeader() {
   return (
     <header className={'w-full bg-[var(--menuColor)] flex place-content-around select-none'}>
           {/* logo */}
-          <div className={`${koulen.className} logo p-2`}>
-            <Link href='/'>
-              <h1 className={'text-3xl leading-1'}>STUDIO CLIP</h1>
-              <h2 className={'text-xl tracking-[0.6rem] leading-none'}>Myanmar</h2>
-            </Link>
+          <div className={`${koulen.className} p-2`}>
+            <Logo />
           </div>
           {/* hamburger menu */}
-          <button title='hamburgerToggle' className={'md:hidden'}>
-            <Image src='/hamburger.svg' width={30} height={30} alt='hamburger' />
-            </button>
+          <HamburgerMenu />
           {/* navigation */}
           <nav className={'uppercase hidden md:flex items-center space-x-5'}>
             {header.nav.map(element => {
