@@ -3,7 +3,7 @@
 import { Koulen, Inter } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
-import { header } from '@/app/models/header/header'
+import { header } from '@/models/header/header'
 
 const koulen = Koulen({
   subsets: ['latin'],
@@ -16,12 +16,12 @@ const inter = Inter({
 
 export default function StudioHeader() {
   return (
-    <header className={'bg-[var(--menuColor)] flex place-content-around select-none'}>
+    <header className={'w-full bg-[var(--menuColor)] flex place-content-around select-none'}>
           {/* logo */}
-          <div className={'logo p-2'}>
+          <div className={`${koulen.className} logo p-2`}>
             <Link href='/'>
-              <h1 className={`${koulen.className} text-3xl leading-1`}>STUDIO CLIP</h1>
-              <h2 className={`${koulen.className} text-xl tracking-[0.6rem] leading-none`}>Myanmar</h2>
+              <h1 className={'text-3xl leading-1'}>STUDIO CLIP</h1>
+              <h2 className={'text-xl tracking-[0.6rem] leading-none'}>Myanmar</h2>
             </Link>
           </div>
           {/* hamburger menu */}
@@ -29,7 +29,7 @@ export default function StudioHeader() {
             <Image src='/hamburger.svg' width={30} height={30} alt='hamburger' />
             </button>
           {/* navigation */}
-          <nav className={`${inter.className} uppercase hidden md:flex items-center space-x-5`}>
+          <nav className={'uppercase hidden md:flex items-center space-x-5'}>
             {header.nav.map(element => {
               return <Link href={element.url} key={element.id}>{element.title}</Link>
             })}
