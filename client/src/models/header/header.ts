@@ -8,11 +8,17 @@ export const header = {
     {
       id: 'ourWork',
       title: 'our work',
+      subTitle: [
+        'create content', 'promotional video', 'Event', 'solution'
+      ],
       url: '#'
     },
     {
       id: 'portfolio',
       title: 'portfolio',
+      subTitle: [
+        'entertainment', 'public associations / company', 'interview', 'Event'
+      ],
       url: '/portfolio'
     },
     {
