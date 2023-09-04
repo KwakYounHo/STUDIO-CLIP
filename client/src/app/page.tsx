@@ -25,7 +25,7 @@ export default function Home() {
       {/* social menu */}
       <div className={'uppercase flex flex-col items-center md:flex-row text-3xl space-y-5 md:space-x-8 md:space-y-0 md:text-4xl font-bold'}>
         {main.socialMenu.map(element => {
-          return <Link href={element.url} key={element.title} className={'hover:scale-110 duration-300'}>{element.title}</Link>
+          return <Link href={element.url} key={element.title} className={'hover:scale-110 duration-300'} target={'_blank'}>{element.title}</Link>
         })}
       </div>
     </main>
