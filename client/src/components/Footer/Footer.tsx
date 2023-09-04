@@ -1,25 +1,23 @@
-import { NextFont } from 'next/dist/compiled/@next/font'
-import { Inter } from 'next/font/google'
-
-import styles from '@/components/Footer/Footer.module.css'
-
-const inter: NextFont = Inter({
-  subsets: ['latin'],
-  weight: ['400']
-})
+import { footer } from '@/models/footer/footer'
 
 export default function StudioFooter() {
   return (
     <footer>
-          <div className={`${inter.className} ${styles.footer}`}>
+          <div className={'w-screen bg-[var(--menuColor)] p-4 m-auto text-xs'}>
             <p>
-              STUDIO CLIP Corp.
+              {footer.description.title}
+            </p>
+            <p className={'capitalize'}>
+              {footer.description.place}
             </p>
             <p>
-              Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon, Myanmar
-            </p>
-            <p>
-              <a href="http://studioclip.video" title="STUDIO CLIP">http://studioclip.video</a> | +09 88413 9136
+              {footer.description.contact.map((element, index) => {
+                if (element === 'https://studioclip.video') {
+                  return <><a href='https://studioclip.video' title={'STUDIO CLIP'}>{element}</a>{index !== footer.description.contact.length -1 && ' | '}</>
+                } else {
+                  return <>{element}{index !== footer.description.contact.length -1 && ' | '}</>
+                }
+              })}
             </p>
           </div>
         </footer>
