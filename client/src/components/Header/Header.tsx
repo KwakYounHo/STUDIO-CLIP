@@ -35,7 +35,7 @@ export default function StudioHeader() {
             })}
           </nav>
           {/* social icons */}
-          <div className={'hidden md:flex md:space-x-2 items-center'}>
+          <div className={'hidden md:flex md:space-x-2 lg:flex lg:space-x-5 items-center'}>
             {header.social.map(element => {
               return (
               <Link href={element.url} key={element.id} className={'relative w-[50px] h-[50px] hover:scale-105 group duration-300'}>
