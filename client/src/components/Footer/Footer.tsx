@@ -1,4 +1,5 @@
 import { footer } from '@/models/footer/footer'
+import Link from 'next/link'
 
 export default function StudioFooter() {
   return (
@@ -12,10 +13,20 @@ export default function StudioFooter() {
             </p>
             <p>
               {footer.description.contact.map((element, index) => {
-                if (element === 'https://studioclip.video') {
-                  return <><a href='https://studioclip.video' title={'STUDIO CLIP'}>{element}</a>{index !== footer.description.contact.length -1 && ' | '}</>
-                } else {
-                  return <>{element}{index !== footer.description.contact.length -1 && ' | '}</>
+                if (element.url) {
+                  return (
+                    <>
+                      <Link href={element.url} key={element.id} target={'_blank'}>{element.url}</Link>
+                      {index !== footer.description.contact.length -1 && ' | '}
+                    </>
+                  )
+                } else if (element.num) {
+                  return (
+                    <>
+                      {element.num}
+                      {index !== footer.description.contact.length -1 && ' | '}
+                    </>
+                  )
                 }
               })}
             </p>
