@@ -17,7 +17,7 @@ const inter = Inter({
 
 export default function StudioHeader() {
   return (
-    <header className={'w-full bg-[var(--menuColor)] flex place-content-around select-none'}>
+    <header className={'w-full bg-menu-bg flex place-content-around select-none'}>
           {/* logo */}
           <div className={`${koulen.className} p-2`}>
             <Logo />

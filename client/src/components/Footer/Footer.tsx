@@ -3,7 +3,7 @@ import { footer } from '@/models/footer/footer'
 export default function StudioFooter() {
   return (
     <footer>
-          <div className={'w-screen bg-[var(--menuColor)] p-4 m-auto text-xs'}>
+          <div className={'w-screen bg-menu-bg p-4 m-auto text-xs'}>
             <p>
               {footer.description.title}
             </p>

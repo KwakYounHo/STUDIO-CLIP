@@ -25,25 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
   } */
-  
-/** ----- common ----- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --menuColor: #d8d8d8;
-  --menuTextColor: black;
-  --contentTextColor: white;
-  --bgColor: black;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-body {
-  background-color: var(--bgColor);
-}

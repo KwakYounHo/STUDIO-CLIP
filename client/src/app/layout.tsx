@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="my">
-      <body className={`${inter.className} h-screen flex flex-col items-center`}>
+      <body className={`${inter.className} h-screen flex flex-col items-center bg-studioBackground`}>
         <StudioHeader />
         {children}
         <StudioFooter />

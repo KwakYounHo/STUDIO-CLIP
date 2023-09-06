@@ -34,7 +34,7 @@ const HamburgerMenu: FC<Props> = () => {
       <div className={'absolute right-0 top-[72px] w-full bg-gray-100 opacity-100 text-sm tracking-tight rounded-b-lg'}>
         <ul className={'uppercase'}>
           {header.nav.map((element, index) => {
-            return <li className={(index === header.nav.length-1) ? 'border-b-4 border-double border-b-[var(--menuColor)] p-3':'border-b-2 p-3'}><Link href={element.url} key={element.id} onClick={toggleHamburger}>{element.title}</Link></li>
+            return <li className={(index === header.nav.length-1) ? 'border-b-4 border-double border-b-menu-bg p-3':'border-b-2 p-3'}><Link href={element.url} key={element.id} onClick={toggleHamburger}>{element.title}</Link></li>
           })}
         </ul>
         <ul className={'uppercase'}>
