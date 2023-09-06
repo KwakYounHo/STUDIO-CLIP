@@ -42,7 +42,7 @@ export const header = {
       colorIcon: '/facebook_color.png',
       width: 50,
       height: 50,
-      url: 'https://www.facebook.com/profile.php?id=61550583410087'
+      url: 'https://www.facebook.com/studioclip.Official'
     },
     {
       id: 'youtube',
