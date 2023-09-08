@@ -1,3 +1,10 @@
+import type { Metadata } from 'next'
+import { constants } from '@/app/common/domain/models/headTitle'
+
+export const metadata: Metadata = {
+  title: constants.createTitle('About')
+}
+
 export default function About() {
   return (
     <div id="main" className={'flex items-center justify-center h-full text-content-text'}>
