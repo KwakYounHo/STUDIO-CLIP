@@ -34,7 +34,7 @@ export default function StudioHeader() {
           <div className={'hidden md:flex md:space-x-1 lg:flex lg:space-x-5 items-center'}>
             {header.social.map(element => {
               return (
-              <Link href={element.url} key={element.id} className={'relative w-[50px] h-[50px] hover:scale-105 group duration-300'}>
+              <Link href={element.url} key={element.id} target={'_blank'} className={'relative w-[50px] h-[50px] hover:scale-105 group duration-300'}>
                 {<div>
                   <Image
                     src={element.blackIcon}
