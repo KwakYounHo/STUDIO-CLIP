@@ -1,7 +1,7 @@
 export const main = {
   socialMenu : [
     {
-      title: 'instar',
+      title: 'insta',
       url: '#'
     },
     {
