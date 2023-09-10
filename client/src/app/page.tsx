@@ -3,8 +3,6 @@ import { Koulen, Inter } from 'next/font/google'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { constants } from '@/app/common/domain/models/headTitle'
-
-import styles from '@/app/home.module.css'
 import { main } from '@/models/main/main'
 
 const koulen = Koulen({
