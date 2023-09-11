@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply h-screen flex flex-col items-center bg-studioBackground
+}
+
+header {
+  @apply w-full bg-menu-bg flex place-content-around select-none
+}
+
+footer {
+  @apply w-screen bg-menu-bg p-4 m-auto text-xs
+}
+
+nav {
+  @apply uppercase hidden md:flex items-center space-x-5 md:text-sm lg:text-base
+}
+
+.home_main {
+  @apply min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className={'min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text'}>
+    <main className={'home_main'}>
       {/* title */}
       <div className={`${koulen.className} text-center select-none`}>
         <h1 className={'leading-none text-6xl md:text-8xl'}>studio clip</h1>

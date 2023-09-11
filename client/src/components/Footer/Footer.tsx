@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function StudioFooter() {
   return (
     <footer>
-          <div className={'w-screen bg-menu-bg p-4 m-auto text-xs'}>
+          <div>
             <p>
               {footer.description.title}
             </p>
