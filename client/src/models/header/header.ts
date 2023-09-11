@@ -9,7 +9,22 @@ export const header = {
       id: 'ourWork',
       title: 'our work',
       subTitle: [
-        'create content', 'promotional video', 'Event', 'solution'
+        {
+          title: 'create content',
+          url: '#'
+        },
+        {
+          title: 'promotional video',
+          url: '#'
+        },
+        {
+          title: 'Event',
+          url: '#'
+        },
+        {
+          title: 'solution',
+          url: '#'
+        }
       ],
       url: '#'
     },
@@ -17,7 +32,22 @@ export const header = {
       id: 'portfolio',
       title: 'portfolio',
       subTitle: [
-        'entertainment', 'public associations / company', 'interview', 'Event'
+        {
+          title: 'entertainment',
+          url: '#'
+        },
+        {
+          title: 'public associations / company',
+          url: '#'
+        },
+        {
+          title: 'interview',
+          url: '#'
+        },
+        {
+          title: 'Event',
+          url: '#'
+        }
       ],
       url: '/portfolio'
     },

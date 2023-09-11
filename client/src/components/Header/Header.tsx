@@ -17,7 +17,7 @@ const inter = Inter({
 
 export default function StudioHeader() {
   return (
-    <header className={'w-full bg-menu-bg flex place-content-around select-none'}>
+    <header>
           {/* logo */}
           <div className={`${koulen.className} p-2`}>
             <Logo />
@@ -25,10 +25,21 @@ export default function StudioHeader() {
           {/* hamburger menu */}
           <HamburgerMenu />
           {/* navigation */}
-          <nav className={'uppercase hidden md:flex items-center space-x-5 md:text-sm lg:text-base'}>
+          <nav>
+            {/* main title */}
             {header.nav.map(element => {
-              return <Link href={element.url} key={element.id}>{element.title}</Link>
+              return (<Link href={element.url} key={element.id}>{element.title}</Link>)
             })}
+            {/* sub title */}
+            <div className="subTitle hidden">
+              {header.nav.map(element => {
+                if (element.subTitle) {
+                  return element.subTitle.map((subTitle, index) => {
+                    return (<Link href={subTitle.url} key={subTitle.title}><span>{subTitle.title}</span></Link>)
+                  })
+                }
+              })}
+            </div>
           </nav>
           {/* social icons */}
           <div className={'hidden md:flex md:space-x-1 lg:flex lg:space-x-5 items-center'}>
