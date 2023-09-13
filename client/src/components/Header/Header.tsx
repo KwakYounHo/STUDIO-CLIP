@@ -34,7 +34,7 @@ export default function StudioHeader() {
           );
         })}
         {/* sub title */}
-        <div className="subTitle absolute top-20 text-white">
+        <div className="subTitle absolute left-0 top-20 text-white invisible">
           {header.nav.map((element) => {
             if (element.subTitle) {
               return (
