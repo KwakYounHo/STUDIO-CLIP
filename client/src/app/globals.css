@@ -22,6 +22,10 @@ nav {
   @apply min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text
 }
 
+#Page01 {
+  @apply relative flex justify-center items-center text-white
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { constants } from '@/app/common/domain/models/headTitle'
+import Page01 from '@/app/about/components/Page01'
 
 export const metadata: Metadata = {
   title: constants.createTitle('About')
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div id="main" className={'flex items-center justify-center h-full text-content-text'}>
-      <h1 className='uppercase text-4xl md:text-7xl duration-300'>about page</h1>
-    </div>
+    <main className={'flex items-center justify-center text-content-text'}>
+      <Page01 />
+    </main>
   )
 }
