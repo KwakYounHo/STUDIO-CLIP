@@ -4,7 +4,7 @@ import { workPageNum } from '@/models/work/workPage'
 
 const Work:FC = () => {
   return (
-    <main className={'flex flex-col gap-10 items-center justify-center text-content-text h-screen'}>
+    <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
       {workPageNum.range.map(element => {
         return (
           <Image
