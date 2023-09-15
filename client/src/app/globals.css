@@ -11,7 +11,7 @@ header {
 }
 
 footer {
-  @apply w-screen bg-menu-bg p-4 m-auto text-xs
+  @apply w-screen bg-menu-bg p-4 mt-auto text-xs
 }
 
 nav {
