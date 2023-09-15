@@ -26,7 +26,7 @@ export const header = {
           url: '#'
         }
       ],
-      url: '#'
+      url: '/work'
     },
     {
       id: 'portfolio',

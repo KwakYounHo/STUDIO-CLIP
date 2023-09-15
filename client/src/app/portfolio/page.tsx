@@ -1,16 +1,11 @@
-import type { Metadata } from 'next'
-import { constants } from '@/app/common/domain/models/headTitle'
+import type { FC } from 'react';
 import Image from 'next/image'
-import { aboutPageNum } from '@/models/about/aboutPage'
+import { portfolioPageNum } from '@/models/portfolio/portfolioPage'
 
-export const metadata: Metadata = {
-  title: constants.createTitle('About')
-}
-
-export default function About() {
+const portfolio:FC = () => {
   return (
     <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
-      {aboutPageNum.range.map(element => {
+      {portfolioPageNum.range.map(element => {
         return (
           <Image
             src={`/info/infoPage${element}.png`}
@@ -19,9 +14,11 @@ export default function About() {
             alt={`${element}page IMG`}
             key={element}
             className={'w-screen'}
+            priority
           />
         )
       })}
     </main>
   )
 }
+export default portfolio;
