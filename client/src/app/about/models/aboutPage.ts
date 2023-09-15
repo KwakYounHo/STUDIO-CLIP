@@ -1,3 +1,3 @@
 export const aboutPageNum = {
-  range: [1, 2, 3, 9]
+  range: [1, 2, 3, 8, 9]
 }
