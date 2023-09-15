@@ -16,9 +16,9 @@ export default function About() {
       {fileCount.map(element => {
         return (
           <Image
-            src={`/info/slide${element}.png`}
-            width={720}
-            height={498}
+            src={`/info/infoPage${element}.png`}
+            width={2160}
+            height={1495}
             alt={`${element}page IMG`}
             key={`slide${element}`}
             className={'w-screen'}
