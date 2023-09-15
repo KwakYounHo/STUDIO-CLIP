@@ -1,26 +1,23 @@
 import type { Metadata } from 'next'
 import { constants } from '@/app/common/domain/models/headTitle'
 import Image from 'next/image'
+import { aboutPageNum } from '@/app/about/models/aboutPage'
 
 export const metadata: Metadata = {
   title: constants.createTitle('About')
 }
 
 export default function About() {
-  const fileCount: number[] = [];
-  for (let i=1; i<10; i++) {
-    fileCount.push(i);
-  }
   return (
     <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
-      {fileCount.map(element => {
+      {aboutPageNum.range.map(element => {
         return (
           <Image
             src={`/info/infoPage${element}.png`}
             width={2160}
             height={1495}
             alt={`${element}page IMG`}
-            key={`slide${element}`}
+            key={element}
             className={'w-screen'}
           />
         )
