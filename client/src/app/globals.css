@@ -23,7 +23,7 @@ nav {
 }
 
 #Page01 {
-  @apply relative flex justify-center items-center text-white
+  @apply relative flex justify-center items-center text-content-text
 }
 
 /* :root {

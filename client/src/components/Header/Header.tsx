@@ -2,7 +2,7 @@ import { Koulen, Inter } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { header } from "@/models/header/header";
-import HamburgerMenu from "@/components/Header/utils/Hamburger/hamburger";
+import HamburgerMenu from "@/components/Header/Adapter/hamburger";
 import Logo from "@comp/Header/Adapter/Logo";
 
 const koulen = Koulen({
@@ -34,7 +34,7 @@ export default function StudioHeader() {
           );
         })}
         {/* sub title */}
-        <div className="subTitle absolute left-0 top-20 text-white invisible">
+        <div className="subTitle absolute left-0 top-20 invisible">
           {header.nav.map((element) => {
             if (element.subTitle) {
               return (
