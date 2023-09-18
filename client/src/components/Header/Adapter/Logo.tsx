@@ -1,6 +1,6 @@
 "use client"
 
-import type { FC } from 'react'
+import * as React from 'react'
 import Link from 'next/link'
 
 const closeHamburger = () => {
@@ -8,7 +8,7 @@ const closeHamburger = () => {
   dispatchEvent(hamburgerEvent)
 }
 
-const Logo: FC = () => {
+const Logo: React.FC = () => {
   return (
     <Link href='/' onClick={closeHamburger}>
       <h1 className={'text-3xl leading-1'}>STUDIO CLIP</h1>
