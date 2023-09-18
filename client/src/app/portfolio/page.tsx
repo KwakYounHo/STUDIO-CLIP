@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import * as React from 'react';
 import Image from 'next/image'
 import { portfolioPageNum } from '@/models/portfolio/portfolioPage'
 
-const portfolio:FC = () => {
+const portfolio: React.FC = () => {
   return (
     <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
       {portfolioPageNum.range.map(element => {

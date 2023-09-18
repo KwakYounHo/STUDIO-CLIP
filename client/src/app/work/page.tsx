@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import * as React from 'react';
 import Image from 'next/image'
 import { workPageNum } from '@/models/work/workPage'
 
-const Work:FC = () => {
+const Work: React.FC = () => {
   return (
     <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
       {workPageNum.range.map(element => {
