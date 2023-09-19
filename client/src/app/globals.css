@@ -18,12 +18,46 @@ nav {
   @apply uppercase hidden md:flex items-center space-x-5 md:text-sm lg:text-base
 }
 
+/* Home */
 .home_main {
   @apply min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text
 }
 
+/* About */
 #Page01 {
   @apply relative flex justify-center items-center text-content-text
+}
+
+/* Contact */
+.contactForm {
+  @apply flex flex-col gap-11
+}
+.contactForm label {
+  @apply text-content-text capitalize text-sm font-semibold
+}
+.contactForm input {
+  @apply bg-studioBackground border-b-2 text-content-text h-7
+}
+.contactForm .required-input {
+  @apply after:content-['*'] after:ml-0.5 after:text-red-400
+}
+.contactForm .formBox {
+  @apply flex flex-col gap-2
+}
+.contactForm .formSubBox {
+  @apply flex gap-2
+}
+.contactForm .formSubBox input {
+  @apply w-full
+}
+.contactForm .formSubBoxWrapper {
+  @apply w-2/4 flex flex-col gap-2 
+}
+/* input spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* :root {
