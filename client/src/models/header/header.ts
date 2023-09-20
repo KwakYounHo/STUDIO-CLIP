@@ -64,7 +64,7 @@ export const header = {
       colorIcon: '/instar_color.png',
       width: 50,
       height: 50,
-      url: '#'
+      url: 'https://www.instagram.com/_studio_clip/'
     },
     {
       id: 'facebook',
@@ -80,7 +80,7 @@ export const header = {
       colorIcon: '/youtube_color.png',
       width: 50,
       height: 50,
-      url: '#'
+      url: 'https://www.youtube.com/@StudioClip_'
     },
     {
       id: 'tiktok',
@@ -88,7 +88,7 @@ export const header = {
       colorIcon: '/tiktok_color.png',
       width: 50,
       height: 50,
-      url: '#'
+      url: 'https://www.tiktok.com/@studio.clip'
     },
   ]
 }
