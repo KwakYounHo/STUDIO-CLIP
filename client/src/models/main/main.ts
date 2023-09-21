@@ -2,7 +2,7 @@ export const main = {
   socialMenu : [
     {
       title: 'insta',
-      url: '#'
+      url: 'https://www.instagram.com/_studio_clip/'
     },
     {
       title: 'facebook',
@@ -10,11 +10,11 @@ export const main = {
     },
     {
       title: 'youtube',
-      url: '#'
+      url: 'https://www.youtube.com/@StudioClip_'
     },
     {
       title: 'tiktok',
-      url: '#'
+      url: 'https://www.tiktok.com/@studio.clip'
     },
   ]
 }
