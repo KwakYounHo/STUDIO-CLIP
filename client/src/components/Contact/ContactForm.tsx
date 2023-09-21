@@ -12,6 +12,9 @@ type ContactInputType = {
   body: string;
 };
 
+const scriptURL: string =
+  "https://script.google.com/macros/s/AKfycbw90G0C3xyngjRuoqjo7lyg2SN43EdksfpbIlKxDGh2BvApQ7HUkfC03tscEuI3fJ07/exec";
+
 const ContactForm: React.FC = () => {
   // react-hook-form config
   const {
@@ -25,8 +28,24 @@ const ContactForm: React.FC = () => {
   } = useForm<ContactInputType>();
 
   // submit handler
-  const contactOnSubmit: SubmitHandler<ContactInputType> = (data) => {
-    console.log(data);
+  const contactOnSubmit: SubmitHandler<ContactInputType> = async (data) => {
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(data as any).toString(),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+      // result response
+      if (response.ok) {
+        console.log("Form successfully submitted");
+      } else {
+        console.error("Form submission error", response);
+      }
+    } catch (error) {
+      console.error("Network error", error);
+    }
   };
 
   // watch value that messenger id input
@@ -43,7 +62,12 @@ const ContactForm: React.FC = () => {
   }, [messengerValue]);
 
   return (
-    <form className={"contactForm"} onSubmit={handleSubmit(contactOnSubmit)}>
+    <form
+      className={"contactForm gform"}
+      action={scriptURL}
+      method="POST"
+      onSubmit={handleSubmit(contactOnSubmit)}
+    >
       {/* Title */}
       <div className={"flex flex-col gap-2"}>
         <label className={"required-input"}>title</label>
