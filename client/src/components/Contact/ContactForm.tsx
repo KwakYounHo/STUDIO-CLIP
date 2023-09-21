@@ -1,84 +1,148 @@
 "use client";
 import * as React from "react";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+
+type ContactInputType = {
+  title: string;
+  team: string;
+  mobileNum: number;
+  messenger: string;
+  messengerPlatform: string;
+  e_mail: string;
+  body: string;
+};
 
 const ContactForm: React.FC = () => {
-  const [messengerDetail, setMessengerDetail] = React.useState<string>("");
-  const messengerPlatformInput = React.useRef<HTMLInputElement>(null);
-  const messengerInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMessengerDetail(e.target.value)
-  }
-  React.useEffect(()=>{
-    if (messengerPlatformInput.current !== null) {
-      if (messengerDetail !== "") {
-        messengerPlatformInput.current.disabled = false;
-      } else {
-        messengerPlatformInput.current.value = "";
-        messengerPlatformInput.current.disabled = true;
+  // react-hook-form config
+  const {
+    register,
+    handleSubmit, // for input onSubmit's callback function
+    watch, // watch input's value
+    formState: { errors },
+    control, // for Controller Container
+    setValue, // setting value under specific conditions
+    clearErrors, // clear errors when specific conditions
+  } = useForm<ContactInputType>();
+
+  // submit handler
+  const contactOnSubmit: SubmitHandler<ContactInputType> = (data) => {
+    console.log(data);
+  };
+
+  // watch value that messenger id input
+  const messengerValue = watch("messenger");
+
+  // if messenger id is null, clear input value
+  React.useEffect(() => {
+    if (!messengerValue) {
+      setValue("messengerPlatform", ""); // if messengerValue is none, clear messenger platform input's value
+      if (errors.messengerPlatform) {
+        clearErrors("messengerPlatform");
       }
     }
-  }, [messengerDetail])
-  const ABCTEST = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(e.target.title)
-  }
+  }, [messengerValue]);
+
   return (
-    <form className={"contactForm"} action={"#"} method={"POST"} onSubmit={ABCTEST}>
+    <form className={"contactForm"} onSubmit={handleSubmit(contactOnSubmit)}>
       {/* Title */}
-      <div>
-        <label htmlFor="inqTitle" className={'required-input'}>title</label>
+      <div className={"flex flex-col gap-2"}>
+        <label className={"required-input"}>title</label>
         <input
-          type="text"
-          id={"inqTitle"}
-          name="title"
+          {...register("title", { required: true })}
           className={"w-full"}
-          title="title"
         />
+        {errors.title && (
+          <span className={"invalidData"}>Title is required</span>
+        )}
       </div>
       {/* information */}
-      <div
-        className={" w-full grid grid-cols-2 gap-4"}
-      >
+      <div className={" w-full grid grid-cols-2 gap-4"}>
         <div className={"formBox"}>
-          <label htmlFor="team">team</label>
-          <input type="text" id="team" name="team" />
+          {/* team */}
+          <label>team</label>
+          <input {...register("team")} />
         </div>
         <div className={"formBox"}>
-          <label htmlFor="mobileNum" className={"required-input"}>
-            mobile number
-          </label>
-          <input type="number" id="mobileNum" name="mobileNum" />
+          {/* mobile number */}
+          <label className={"required-input"}>mobile number</label>
+          <input
+            type="number"
+            placeholder="Enter numbers only"
+            {...register("mobileNum", { required: true })}
+          />
+          {errors.mobileNum && (
+            <span className={"invalidData"}>mobile number is required</span>
+          )}
         </div>
         <div className={"formSubBox"}>
           <div className={"formSubBoxWrapper"}>
-            <label htmlFor="messenger">messenger id</label>
-            <input type="text" id="messenger" name="messenger" onChange={messengerInputHandler} />
+            {/* messenger id */}
+            <label>messenger id</label>
+            <input {...register("messenger")} />
           </div>
-          <div className={`formSubBoxWrapper ${(messengerDetail === "")? "opacity-50":"opacity-100"}`}>
-            <label htmlFor="messengerPlatform">messenger platform</label>
-            <input type="text" id="messengerPlatform" name="messengerPlatform" ref={messengerPlatformInput} disabled />
+          <div
+            className={`formSubBoxWrapper ${
+              !messengerValue ? "disabledInput" : ""
+            }`}
+          >
+            {/* messenger platform */}
+            <label>messenger platform</label>
+            <Controller
+              name="messengerPlatform"
+              control={control}
+              defaultValue=""
+              rules={{ required: messengerValue ? true : false }}
+              render={({ field }) => (
+                <input {...field} disabled={!messengerValue} />
+              )}
+            />
+            {errors.messengerPlatform && (
+              <span className={"invalidData"}>
+                If you input the messenger ID,
+                <br />
+                messenger platform is required
+              </span>
+            )}
           </div>
         </div>
         <div className={"formBox"}>
-          <label htmlFor="e-mail">e-mail</label>
-          <input type="email" id="e-mail" name="e-mail" />
+          {/* e-mail */}
+          <label>e-mail</label>
+          <input
+            type="email"
+            {...register("e_mail", {
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
+            })}
+          />
+          {errors.e_mail && (
+            <span className="invalidData">{errors.e_mail.message}</span>
+          )}
         </div>
       </div>
       {/* body */}
       <div>
-        <label htmlFor="inquiryDetail" className={"required-input"}>
-          Details
-        </label>
+        <label className={"required-input"}>Details</label>
         <textarea
-          name="body"
-          id="inquiryDetail"
+          {...register("body", { required: true })}
           className={"w-full h-60 resize-none p-1"}
           placeholder="(*)표시가 있는 항목은 필수로 입력해야 합니다)"
         />
-        {/* submit */}
-        <button type="submit" className={"bg-menu-bg p-1 w-full mt-2"}>
-          Send
-        </button>
+        {errors.body && (
+          <span className={"invalidData"}>Detail is required</span>
+        )}
       </div>
+      {/* submit */}
+      <button
+        type="submit"
+        className={
+          "bg-menu-bg p-1 w-full mt-2 hover:bg-menu-bg/50 hover:text-content-text rounded-lg"
+        }
+      >
+        Send
+      </button>
     </form>
   );
 };

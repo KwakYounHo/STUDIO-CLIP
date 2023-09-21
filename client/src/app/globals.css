@@ -51,7 +51,7 @@ nav {
   @apply w-full
 }
 .contactForm .formSubBoxWrapper {
-  @apply w-2/4 flex flex-col gap-2 
+  @apply w-2/4 flex flex-col gap-2 flex-wrap
 }
 .contactFormContainer {
   @apply w-screen h-screen flex flex-col items-center justify-center gap-16
@@ -59,9 +59,15 @@ nav {
 .contactFormTitle {
   @apply uppercase text-content-text text-4xl font-black
 }
+.invalidData {
+  @apply text-red-300 my-1 text-xs
+}
+.disabledInput {
+  @apply opacity-50
+}
 /* input spinner */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.contactForm input::-webkit-outer-spin-button,
+.contactForm input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
