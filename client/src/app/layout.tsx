@@ -21,7 +21,9 @@ export default function RootLayout({
         <StudioHeader />
         {children}
         <StudioFooter />
-        <Toaster />
+        <Toaster
+          containerClassName="z-9999"
+        />
       </body>
     </html>
   );
