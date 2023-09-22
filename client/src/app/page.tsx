@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Koulen, Inter } from "next/font/google";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -9,10 +8,6 @@ import * as React from "react";
 const koulen = Koulen({
   subsets: ["latin"],
   weight: ["400"],
-});
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["700"],
 });
 
 export const metadata: Metadata = {
