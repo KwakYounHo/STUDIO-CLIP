@@ -72,7 +72,7 @@ nav {
   @apply bg-black/75 w-full h-full flex justify-center items-center
 }
 .modalContent {
-  @apply w-1/2 h-3/4 bg-white rounded-lg flex-col flex justify-center items-center gap-7
+  @apply md:w-1/2 md:h-3/4 bg-white rounded-lg flex-col flex justify-center items-center md:gap-7
 }
 /* input spinner */
 .contactForm input::-webkit-outer-spin-button,

@@ -15,9 +15,9 @@ const SendMailLoading: React.FC = () => {
             loop
             animationData={sendMailLoadingFile}
             play
-            className={"w-80 h-80"}
+            className={"w-40 h-40 md:w-80 md:h-80 m-7 md:m-0"}
           />
-          <p className={"text-xl font-semibold"}>Sending email...</p>
+          <p className={"text-xl font-semibold m-7 md:m-0"}>Sending email...</p>
         </div>
       </div>
     </div>
@@ -25,13 +25,13 @@ const SendMailLoading: React.FC = () => {
 };
 
 type SuccessProps = {
-  sendState: React.Dispatch<React.SetStateAction<boolean>>
+  sendState: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SendMailSuccess: React.FC<SuccessProps> = ({ sendState }) => {
-  const clickButton = React.useCallback(()=>{
-    sendState(false)
-  }, [])
+  const clickButton = React.useCallback(() => {
+    sendState(false);
+  }, []);
   return (
     <div className="modalWrapper">
       <div className="modalBackground">
@@ -40,13 +40,24 @@ const SendMailSuccess: React.FC<SuccessProps> = ({ sendState }) => {
             loop
             animationData={sendMailSuccessFile}
             play
-            className={"w-80 h-80"}
+            className={"w-40 h-40 md:w-80 md:h-80 m-7 md:m-0"}
           />
-          <h1 className={"text-4xl font-black"}>Successfully send Email</h1>
-          <p className={"text-xl font-semibold text-center"}>
-            We will contact you<br />as soon as we check your email
-          </p>
-          <button onClick={clickButton} className={" bg-black text-white rounded-lg hover:bg-black/50 w-20 h-10"}>
+          <div className={"m-7 md:m-0"}>
+            <h1 className={"text-xl md:text-4xl font-black"}>
+              Successfully send Email
+            </h1>
+            <p className={"text-base md:text-xl font-semibold text-center mt-4"}>
+              We will contact you
+              <br />
+              as soon as we check your email
+            </p>
+          </div>
+          <button
+            onClick={clickButton}
+            className={
+              " bg-black text-white rounded-lg hover:bg-black/50 w-20 h-10 mb-7 md:mb-0"
+            }
+          >
             OK
           </button>
         </div>
