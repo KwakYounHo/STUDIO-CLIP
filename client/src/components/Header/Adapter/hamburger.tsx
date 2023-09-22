@@ -1,7 +1,7 @@
 "use client";
 
 import { header } from "@/models/header/header";
-import * as React from 'react';
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -57,6 +57,7 @@ const HamburgerMenu: React.FC<Props> = () => {
                         ? "border-double border-b-4 border-b-black/50 p-3"
                         : "border-b-2 p-3"
                     }
+                    key={element.id}
                   >
                     {element.title}
                   </li>
@@ -67,18 +68,18 @@ const HamburgerMenu: React.FC<Props> = () => {
           <ul className={"uppercase"}>
             {header.social.map((element, index) => {
               return (
-                <li
-                  className={
-                    index === header.social.length - 1
-                      ? "p-3"
-                      : "border-b-2 p-3"
-                  }
-                  key={element.id}
-                >
-                  <Link href={element.url} target="_blank">
+                <Link href={element.url} target="_blank" key={element.id}>
+                  <li
+                    className={
+                      index === header.social.length - 1
+                        ? "p-3"
+                        : "border-b-2 p-3"
+                    }
+                    key={element.id}
+                  >
                     {element.id}
-                  </Link>
-                </li>
+                  </li>
+                </Link>
               );
             })}
           </ul>
