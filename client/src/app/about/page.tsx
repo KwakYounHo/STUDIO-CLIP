@@ -20,6 +20,7 @@ const About: React.FC = () => {
             alt={`${element}page IMG`}
             key={element}
             className={'w-screen'}
+            priority
           />
         )
       })}
