@@ -30,7 +30,7 @@ nav {
 
 /* Contact */
 .contactForm {
-  @apply flex flex-col gap-11 p-7 md:p-0
+  @apply flex flex-col gap-11 p-7 lg:p-0
 }
 .contactForm label {
   @apply text-content-text capitalize text-sm font-semibold
@@ -45,19 +45,19 @@ nav {
   @apply flex flex-col gap-2
 }
 .contactForm .formSubBox {
-  @apply flex flex-col md:flex-row gap-2
+  @apply flex flex-col lg:flex-row gap-2
 }
 .contactForm .formSubBox input {
   @apply w-full
 }
 .contactForm .formSubBoxWrapper {
-  @apply md:w-2/4 flex flex-col gap-2 flex-wrap
+  @apply lg:w-2/4 flex flex-col gap-2 flex-wrap
 }
 .contactFormContainer {
-  @apply w-screen md:w-auto md:h-screen flex flex-col items-center justify-center gap-16
+  @apply w-screen lg:w-auto lg:h-screen flex flex-col items-center justify-center gap-16
 }
 .contactFormTitle {
-  @apply uppercase text-content-text text-4xl font-black mt-20 md:mt-0
+  @apply uppercase text-content-text text-4xl font-black mt-20 lg:mt-0
 }
 .invalidData {
   @apply text-red-300 my-1 text-xs
@@ -72,7 +72,7 @@ nav {
   @apply bg-black/75 w-full h-full flex justify-center items-center
 }
 .modalContent {
-  @apply md:w-1/2 md:h-3/4 bg-white rounded-lg flex-col flex justify-center items-center md:gap-7
+  @apply lg:w-1/2 lg:h-3/4 bg-white rounded-lg flex-col flex justify-center items-center lg:gap-7
 }
 /* input spinner */
 .contactForm input::-webkit-outer-spin-button,

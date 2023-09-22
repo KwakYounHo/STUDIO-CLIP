@@ -5,7 +5,7 @@ const InquiryContainer: React.FC = () => {
   return (
     <div className={"contactFormContainer"}>
       <h3 className={"contactFormTitle"}>inquiry</h3>
-      <div className={"w-full md:w-auto"}>
+      <div className={"w-full lg:w-auto"}>
         <ContactForm />
       </div>
     </div>
