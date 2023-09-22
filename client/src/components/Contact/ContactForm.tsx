@@ -112,6 +112,7 @@ const ContactForm: React.FC = () => {
     }
   }, [messengerValue]);
 
+  //! form start
   return (
     <>
       {activeSend && <SendMailLoading />}
@@ -132,7 +133,7 @@ const ContactForm: React.FC = () => {
           )}
         </div>
         {/* information */}
-        <div className={" w-full grid grid-cols-2 gap-4"}>
+        <div className={" w-full grid md:grid-cols-2 gap-4"}>
           <div className={"formBox"}>
             {/* team */}
             <label>team</label>
@@ -199,7 +200,7 @@ const ContactForm: React.FC = () => {
           </div>
         </div>
         {/* body */}
-        <div>
+        <div className={"flex flex-col gap-2"}>
           <label className={"required-input"}>Details</label>
           <textarea
             {...register("body", { required: true })}
