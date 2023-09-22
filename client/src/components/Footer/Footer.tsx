@@ -1,5 +1,6 @@
 import { footer } from '@/models/footer/footer'
 import Link from 'next/link'
+import * as React from 'react';
 
 export default function StudioFooter() {
   return (
@@ -15,17 +16,15 @@ export default function StudioFooter() {
               {footer.description.contact.map((element, index) => {
                 if (element.url) {
                   return (
-                    <>
-                      <Link href={element.url} key={element.id} target={'_blank'}>{element.url}</Link>
-                      {index !== footer.description.contact.length -1 && ' | '}
-                    </>
+                    <React.Fragment key={element.id}>
+                      {index === footer.description.contact.length -1? <Link href={element.url} target={'_blank'}>{element.url}</Link>:<Link href={element.url} target={'_blank'}>{element.url + " | "}</Link>}
+                    </React.Fragment>
                   )
                 } else if (element.num) {
                   return (
-                    <>
-                      {element.num}
-                      {index !== footer.description.contact.length -1 && ' | '}
-                    </>
+                    <React.Fragment key={element.id}>
+                      {index === footer.description.contact.length -1? `${element.num}`:`${element.num} | `}
+                    </React.Fragment>
                   )
                 }
               })}
