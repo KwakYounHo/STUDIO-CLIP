@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound: React.FC = () => {
-  const [count, setCount] = React.useState<number>(10);
+  const [count, setCount] = React.useState<number>(5);
   const router = useRouter();
   const intervalID = React.useRef<number | NodeJS.Timeout | null>(null);
 
