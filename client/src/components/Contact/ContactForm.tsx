@@ -13,7 +13,7 @@ type ContactInputType = {
 };
 
 const scriptURL: string =
-  "https://script.google.com/macros/s/AKfycbw90G0C3xyngjRuoqjo7lyg2SN43EdksfpbIlKxDGh2BvApQ7HUkfC03tscEuI3fJ07/exec";
+  "https://script.google.com/macros/s/AKfycbzqxRzvCEEV-RGsjyL4sRIY7fgvOWiD_sJF0bDvANGRXZ5KnXVp08ptsZB-H6v_LOly/exec";
 
 const ContactForm: React.FC = () => {
   // react-hook-form config
@@ -40,11 +40,13 @@ const ContactForm: React.FC = () => {
       // result response
       if (response.ok) {
         console.log("Form successfully submitted");
+        //! 전송 완료일 경우 다음 동작 작성해야 함
       } else {
         console.error("Form submission error", response);
       }
     } catch (error) {
       console.error("Network error", error);
+      //! 전송 실패일 경우 다음 동작 작성해야 함
     }
   };
 
@@ -64,8 +66,6 @@ const ContactForm: React.FC = () => {
   return (
     <form
       className={"contactForm gform"}
-      action={scriptURL}
-      method="POST"
       onSubmit={handleSubmit(contactOnSubmit)}
     >
       {/* Title */}
