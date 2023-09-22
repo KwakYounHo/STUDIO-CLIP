@@ -1,11 +1,12 @@
 "use client";
 import * as React from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import toast from "react-hot-toast";
 
 type ContactInputType = {
   title: string;
   team: string;
-  mobileNum: number;
+  mobileNum: number | null;
   messenger: string;
   messengerPlatform: string;
   e_mail: string;
@@ -13,9 +14,10 @@ type ContactInputType = {
 };
 
 const scriptURL: string =
-  "https://script.google.com/macros/s/AKfycbzqxRzvCEEV-RGsjyL4sRIY7fgvOWiD_sJF0bDvANGRXZ5KnXVp08ptsZB-H6v_LOly/exec";
+  "https://script.google.com/macros/s/AKfycbyaaKInAYLTUHtj5hi_HcTUU0NEi_wJ7MzqlaDoWnjrFz3pbLgXQ_BFfP7ilInt8KfV/exec";
 
 const ContactForm: React.FC = () => {
+  const [activeSend, setActiveSend] = React.useState<boolean>(false);
   // react-hook-form config
   const {
     register,
@@ -25,11 +27,36 @@ const ContactForm: React.FC = () => {
     control, // for Controller Container
     setValue, // setting value under specific conditions
     clearErrors, // clear errors when specific conditions
+    reset, // reset value at input
   } = useForm<ContactInputType>();
+
+  // when email sent, clear value
+  const clearInput = React.useCallback(() => {
+    reset({
+      title: "",
+      team: "",
+      mobileNum: null,
+      messenger: "",
+      messengerPlatform: "",
+      e_mail: "",
+      body: "",
+    });
+  }, []);
 
   // submit handler
   const contactOnSubmit: SubmitHandler<ContactInputType> = async (data) => {
+    // loading toast generate
+    const loadingToast = toast.loading("Sending email...");
+    // already active send
+    if (activeSend === true) {
+      toast.dismiss(loadingToast);
+      toast("Email is already being sent", {
+        icon: "⚠️",
+      });
+      return;
+    }
     try {
+      setActiveSend(true);
       const response = await fetch(scriptURL, {
         method: "POST",
         body: new URLSearchParams(data as any).toString(),
@@ -40,12 +67,24 @@ const ContactForm: React.FC = () => {
       // result response
       if (response.ok) {
         console.log("Form successfully submitted");
+        setActiveSend(false);
+        toast.dismiss(loadingToast);
+        toast.success("Eamil sent");
+        clearInput();
         //! 전송 완료일 경우 다음 동작 작성해야 함
       } else {
         console.error("Form submission error", response);
+        toast.dismiss(loadingToast);
+        setActiveSend(false);
+        toast.dismiss(loadingToast);
+        toast.error("An error occurred\nPlease inquiry manager");
+        //! 전송 실패일 경우 다음 동작 작성해야 함
       }
     } catch (error) {
       console.error("Network error", error);
+      setActiveSend(false);
+      toast.dismiss(loadingToast);
+      toast.error("An error occurred\nPlease inquiry manager");
       //! 전송 실패일 경우 다음 동작 작성해야 함
     }
   };
