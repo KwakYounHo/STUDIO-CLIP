@@ -38,7 +38,7 @@ export default function StudioHeader() {
           {header.nav.map((element) => {
             if (element.subTitle) {
               return (
-                <ul className={element.id+'SubTitle capitalize'}>
+                <ul className={element.id+'SubTitle capitalize'} key={element.id}>
                   {element.subTitle.map((subTitle, index) => {
                     return (
                       <li key={subTitle.title}>

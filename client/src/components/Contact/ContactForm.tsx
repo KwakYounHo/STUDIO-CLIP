@@ -50,7 +50,7 @@ const ContactForm: React.FC = () => {
       e_mail: "",
       body: "",
     });
-  }, []);
+  }, [reset]);
 
   // submit handler
   const contactOnSubmit: SubmitHandler<ContactInputType> = async (data) => {
@@ -110,7 +110,7 @@ const ContactForm: React.FC = () => {
         clearErrors("messengerPlatform");
       }
     }
-  }, [messengerValue]);
+  }, [messengerValue, errors.messengerPlatform, clearErrors, setValue]);
 
   //! form start
   return (

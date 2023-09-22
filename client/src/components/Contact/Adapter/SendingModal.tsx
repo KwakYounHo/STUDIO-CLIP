@@ -31,7 +31,7 @@ type SuccessProps = {
 const SendMailSuccess: React.FC<SuccessProps> = ({ sendState }) => {
   const clickButton = React.useCallback(() => {
     sendState(false);
-  }, []);
+  }, [sendState]);
   return (
     <div className="modalWrapper">
       <div className="modalBackground">
