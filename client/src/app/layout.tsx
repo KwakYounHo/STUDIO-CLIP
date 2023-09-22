@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="my">
+    <html lang="en">
       <body className={`${inter.className}`}>
         <StudioHeader />
         {children}
