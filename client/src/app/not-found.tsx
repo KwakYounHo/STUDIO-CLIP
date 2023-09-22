@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound: React.FC = () => {
-  const [count, setCount] = React.useState<number>(5);
+  const [count, setCount] = React.useState<number>(10);
   const router = useRouter();
   const intervalID = React.useRef<number | NodeJS.Timeout | null>(null);
 
@@ -26,7 +26,7 @@ const NotFound: React.FC = () => {
   React.useEffect(() => {
     if (count === 0) {
       console.log(count);
-      router.back();
+      router.push("/");
       if (intervalID.current) {
         clearInterval(intervalID.current);
       }
@@ -45,15 +45,21 @@ const NotFound: React.FC = () => {
         play
         className={"w-60 h-60"}
       />
-      <div className={"flex flex-col justify-center items-center"}>
+      <div className={"flex flex-col text-center"}>
         <div className={"w-full"}>
-          <h1 className={"text-3xl md:text-5xl font-black text-start"}>
+          <h1 className={"text-3xl md:text-5xl font-black"}>
             404 Not Found
           </h1>
           <p className={"mt-7 md:text-lg"}>Does not exist page</p>
           <div className={"md:text-lg"}>
-            Go to the main page in{" "}
+            Go to main page after{" "}
             {<span className={"text-2xl md:text-3xl"}>{count}</span>} seconds
+          </div>
+          <div className={"text-xs md:text-base mt-7"}>
+            If you want Return to previous page,{" "}
+            <button onClick={router.back} className={"text-xl md:text-2xl"}>
+              click here
+            </button>
           </div>
         </div>
       </div>
