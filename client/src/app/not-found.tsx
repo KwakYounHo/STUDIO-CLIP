@@ -26,7 +26,7 @@ const NotFound: React.FC = () => {
   React.useEffect(() => {
     if (count === 0) {
       console.log(count);
-      router.push("/");
+      router.back();
       if (intervalID.current) {
         clearInterval(intervalID.current);
       }
