@@ -3,6 +3,11 @@ import * as React from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import toast from "react-hot-toast";
 
+import {
+  SendMailLoading,
+  SendMailSuccess,
+} from "@/components/Contact/Adapter/SendingModal";
+
 type ContactInputType = {
   title: string;
   team: string;
@@ -16,8 +21,12 @@ type ContactInputType = {
 const scriptURL: string =
   "https://script.google.com/macros/s/AKfycbyaaKInAYLTUHtj5hi_HcTUU0NEi_wJ7MzqlaDoWnjrFz3pbLgXQ_BFfP7ilInt8KfV/exec";
 
+//! component start
 const ContactForm: React.FC = () => {
+  // management state
   const [activeSend, setActiveSend] = React.useState<boolean>(false);
+  const [sendMailSuccess, setSendMailSuccess] = React.useState<boolean>(false);
+
   // react-hook-form config
   const {
     register,
@@ -67,25 +76,26 @@ const ContactForm: React.FC = () => {
       // result response
       if (response.ok) {
         console.log("Form successfully submitted");
-        setActiveSend(false);
         toast.dismiss(loadingToast);
         toast.success("Eamil sent");
+        setActiveSend(false);
+        setSendMailSuccess(true);
         clearInput();
-        //! 전송 완료일 경우 다음 동작 작성해야 함
+        //! successfully send
       } else {
         console.error("Form submission error", response);
         toast.dismiss(loadingToast);
         setActiveSend(false);
         toast.dismiss(loadingToast);
         toast.error("An error occurred\nPlease inquiry manager");
-        //! 전송 실패일 경우 다음 동작 작성해야 함
+        //! Failed to send
       }
     } catch (error) {
       console.error("Network error", error);
       setActiveSend(false);
       toast.dismiss(loadingToast);
       toast.error("An error occurred\nPlease inquiry manager");
-      //! 전송 실패일 경우 다음 동작 작성해야 함
+      //! Failed to send
     }
   };
 
@@ -103,110 +113,114 @@ const ContactForm: React.FC = () => {
   }, [messengerValue]);
 
   return (
-    <form
-      className={"contactForm gform"}
-      onSubmit={handleSubmit(contactOnSubmit)}
-    >
-      {/* Title */}
-      <div className={"flex flex-col gap-2"}>
-        <label className={"required-input"}>title</label>
-        <input
-          {...register("title", { required: true })}
-          className={"w-full"}
-        />
-        {errors.title && (
-          <span className={"invalidData"}>Title is required</span>
-        )}
-      </div>
-      {/* information */}
-      <div className={" w-full grid grid-cols-2 gap-4"}>
-        <div className={"formBox"}>
-          {/* team */}
-          <label>team</label>
-          <input {...register("team")} />
-        </div>
-        <div className={"formBox"}>
-          {/* mobile number */}
-          <label className={"required-input"}>mobile number</label>
+    <>
+      {activeSend && <SendMailLoading />}
+      {sendMailSuccess && <SendMailSuccess sendState={setSendMailSuccess} />}
+      <form
+        className={"contactForm gform"}
+        onSubmit={handleSubmit(contactOnSubmit)}
+      >
+        {/* Title */}
+        <div className={"flex flex-col gap-2"}>
+          <label className={"required-input"}>title</label>
           <input
-            type="number"
-            placeholder="Enter numbers only"
-            {...register("mobileNum", { required: true })}
+            {...register("title", { required: true })}
+            className={"w-full"}
           />
-          {errors.mobileNum && (
-            <span className={"invalidData"}>mobile number is required</span>
+          {errors.title && (
+            <span className={"invalidData"}>Title is required</span>
           )}
         </div>
-        <div className={"formSubBox"}>
-          <div className={"formSubBoxWrapper"}>
-            {/* messenger id */}
-            <label>messenger id</label>
-            <input {...register("messenger")} />
+        {/* information */}
+        <div className={" w-full grid grid-cols-2 gap-4"}>
+          <div className={"formBox"}>
+            {/* team */}
+            <label>team</label>
+            <input {...register("team")} />
           </div>
-          <div
-            className={`formSubBoxWrapper ${
-              !messengerValue ? "disabledInput" : ""
-            }`}
-          >
-            {/* messenger platform */}
-            <label>messenger platform</label>
-            <Controller
-              name="messengerPlatform"
-              control={control}
-              defaultValue=""
-              rules={{ required: messengerValue ? true : false }}
-              render={({ field }) => (
-                <input {...field} disabled={!messengerValue} />
-              )}
+          <div className={"formBox"}>
+            {/* mobile number */}
+            <label className={"required-input"}>mobile number</label>
+            <input
+              type="number"
+              placeholder="Enter numbers only"
+              {...register("mobileNum", { required: true })}
             />
-            {errors.messengerPlatform && (
-              <span className={"invalidData"}>
-                If you input the messenger ID,
-                <br />
-                messenger platform is required
-              </span>
+            {errors.mobileNum && (
+              <span className={"invalidData"}>mobile number is required</span>
+            )}
+          </div>
+          <div className={"formSubBox"}>
+            <div className={"formSubBoxWrapper"}>
+              {/* messenger id */}
+              <label>messenger id</label>
+              <input {...register("messenger")} />
+            </div>
+            <div
+              className={`formSubBoxWrapper ${
+                !messengerValue ? "disabledInput" : ""
+              }`}
+            >
+              {/* messenger platform */}
+              <label>messenger platform</label>
+              <Controller
+                name="messengerPlatform"
+                control={control}
+                defaultValue=""
+                rules={{ required: messengerValue ? true : false }}
+                render={({ field }) => (
+                  <input {...field} disabled={!messengerValue} />
+                )}
+              />
+              {errors.messengerPlatform && (
+                <span className={"invalidData"}>
+                  If you input the messenger ID,
+                  <br />
+                  messenger platform is required
+                </span>
+              )}
+            </div>
+          </div>
+          <div className={"formBox"}>
+            {/* e-mail */}
+            <label>e-mail</label>
+            <input
+              type="email"
+              {...register("e_mail", {
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.e_mail && (
+              <span className="invalidData">{errors.e_mail.message}</span>
             )}
           </div>
         </div>
-        <div className={"formBox"}>
-          {/* e-mail */}
-          <label>e-mail</label>
-          <input
-            type="email"
-            {...register("e_mail", {
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
-              },
-            })}
+        {/* body */}
+        <div>
+          <label className={"required-input"}>Details</label>
+          <textarea
+            {...register("body", { required: true })}
+            className={"w-full h-60 resize-none p-1"}
+            placeholder="(*)표시가 있는 항목은 필수로 입력해야 합니다)"
           />
-          {errors.e_mail && (
-            <span className="invalidData">{errors.e_mail.message}</span>
+          {errors.body && (
+            <span className={"invalidData"}>Detail is required</span>
           )}
         </div>
-      </div>
-      {/* body */}
-      <div>
-        <label className={"required-input"}>Details</label>
-        <textarea
-          {...register("body", { required: true })}
-          className={"w-full h-60 resize-none p-1"}
-          placeholder="(*)표시가 있는 항목은 필수로 입력해야 합니다)"
-        />
-        {errors.body && (
-          <span className={"invalidData"}>Detail is required</span>
-        )}
-      </div>
-      {/* submit */}
-      <button
-        type="submit"
-        className={
-          "bg-menu-bg p-1 w-full mt-2 hover:bg-menu-bg/50 hover:text-content-text rounded-lg"
-        }
-      >
-        Send
-      </button>
-    </form>
+        {/* submit */}
+        <button
+          type="submit"
+          className={
+            "bg-menu-bg p-1 w-full mt-2 hover:bg-menu-bg/50 hover:text-content-text rounded-lg"
+          }
+        >
+          Send
+        </button>
+      </form>
+    </>
   );
 };
 export default ContactForm;

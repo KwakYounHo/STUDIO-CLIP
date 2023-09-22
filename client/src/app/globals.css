@@ -65,6 +65,15 @@ nav {
 .disabledInput {
   @apply opacity-50
 }
+.modalWrapper {
+  @apply w-screen h-screen fixed left-0 top-0 z-[9998]
+}
+.modalBackground {
+  @apply bg-black/75 w-full h-full flex justify-center items-center
+}
+.modalContent {
+  @apply w-1/2 h-3/4 bg-white rounded-lg flex-col flex justify-center items-center gap-7
+}
 /* input spinner */
 .contactForm input::-webkit-outer-spin-button,
 .contactForm input::-webkit-inner-spin-button {
