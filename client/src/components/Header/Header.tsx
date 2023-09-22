@@ -18,7 +18,7 @@ export default function StudioHeader() {
   return (
     <header>
       {/* logo */}
-      <div className={`${koulen.className} p-2`}>
+      <div className={`${koulen.className} p-2 select-none`}>
         <Logo />
       </div>
       {/* hamburger menu */}
