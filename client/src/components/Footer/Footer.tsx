@@ -12,7 +12,7 @@ export default function StudioFooter() {
             <p className={'capitalize'}>
               {footer.description.place}
             </p>
-            <p>
+            <div>
               {footer.description.contact.map((element, index) => {
                 if (element.url) {
                   return (
@@ -23,12 +23,12 @@ export default function StudioFooter() {
                 } else if (element.num) {
                   return (
                     <React.Fragment key={element.id}>
-                      {index === footer.description.contact.length -1? `${element.num}`:`${element.num} | `}
+                      {index === footer.description.contact.length -1? <span>{element.num}</span>:<span>{element.num} | </span>}
                     </React.Fragment>
                   )
                 }
               })}
-            </p>
+            </div>
           </div>
         </footer>
   )
