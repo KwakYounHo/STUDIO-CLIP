@@ -1,24 +1,14 @@
-import { Koulen, Inter } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { header } from "@/models/header/header";
 import HamburgerMenu from "@/components/Header/Adapter/hamburger";
 import Logo from "@comp/Header/Adapter/Logo";
 
-const koulen = Koulen({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
 export default function StudioHeader() {
   return (
     <header>
       {/* logo */}
-      <div className={`${koulen.className} p-2 select-none`}>
+      <div className={`p-2 select-none`}>
         <Logo />
       </div>
       {/* hamburger menu */}
