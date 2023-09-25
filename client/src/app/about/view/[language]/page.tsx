@@ -1,22 +1,22 @@
+"use client"
+
 import * as React from 'react';
-import type { Metadata } from 'next'
-import { constants } from '@/app/common/domain/models/headTitle'
+import { useRouter, usePathname } from 'next/navigation'
 import { aboutPageNum } from '@/models/about/aboutPage'
 import SelectLanguage from '@/utils/SelectLanguage'
 import Image from 'next/image'
 
-export const metadata: Metadata = {
-  title: constants.createTitle('About')
-}
+const Language: React.FC = () => {
+  const router = useRouter();
+  const pathname = usePathname()
 
-const About: React.FC = () => {
   return (
     <main className={'flex flex-col gap-10 items-center justify-center text-content-text'}>
-      <SelectLanguage />
+      <SelectLanguage className={'mt-7 w-10/12'} />
       {aboutPageNum.range.map(element => {
         return (
           <Image
-            src={`/info/English/infoPage${element}.png`}
+            src={`/info/${pathname.split('/')[3]}/infoPage${element}.png`}
             width={2160}
             height={1495}
             alt={`${element}page IMG`}
@@ -29,4 +29,4 @@ const About: React.FC = () => {
     </main>
   )
 }
-export default About
+export default Language;

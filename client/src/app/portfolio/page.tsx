@@ -18,7 +18,7 @@ const portfolio: React.FC = () => {
       {portfolioPageNum.range.map((element) => {
         return (
           <Image
-            src={`/info/infoPage${element}.png`}
+            src={`/info/English/infoPage${element}.png`}
             width={2160}
             height={1495}
             alt={`${element}page IMG`}
