@@ -24,7 +24,7 @@ const RootLayout = ({
           <StudioHeader />
           {children}
           <StudioFooter />
-          <Toaster containerClassName="z-9999" />
+          <Toaster containerClassName="z-9999" position="bottom-left" />
         </React.Suspense>
       </body>
     </html>
