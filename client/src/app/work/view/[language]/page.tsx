@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import * as React from "react";
-import { useRouter, usePathname } from "next/navigation";
-import { aboutPageNum } from "@/models/about/aboutPage";
-import SelectLanguage from "@/utils/SelectLanguage";
 import Image from "next/image";
+import { workPageNum } from "@/models/work/workPage";
+import SelectLanguage from "@/utils/SelectLanguage";
+import { usePathname } from "next/navigation";
 
-const Language: React.FC = () => {
+const Work: React.FC = () => {
   const pathname = usePathname();
 
   return (
@@ -15,8 +15,8 @@ const Language: React.FC = () => {
         "flex flex-col gap-10 items-center justify-center text-content-text"
       }
     >
-      <SelectLanguage page={"about"} className={"w-10/12"} />
-      {aboutPageNum.range.map((element) => {
+      <SelectLanguage page={"work"} className={"w-10/12"} />
+      {workPageNum.range.map((element) => {
         return (
           <Image
             src={`/info/${pathname.split("/")[3]}/infoPage${element}.png`}
@@ -32,4 +32,4 @@ const Language: React.FC = () => {
     </main>
   );
 };
-export default Language;
+export default Work;
