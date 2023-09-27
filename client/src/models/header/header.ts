@@ -60,32 +60,32 @@ export const header = {
   social: [
     {
       id: 'instargram',
-      blackIcon: '/insta_50px.png',
-      colorIcon: '/insta_color.png',
+      blackIcon: '/insta_50px.svg',
+      colorIcon: '/insta_color.svg',
       width: 50,
       height: 50,
       url: 'https://www.instagram.com/_studio_clip/'
     },
     {
       id: 'facebook',
-      blackIcon: '/facebook_50px.png',
-      colorIcon: '/facebook_color.png',
+      blackIcon: '/facebook_50px.svg',
+      colorIcon: '/facebook_color.svg',
       width: 50,
       height: 50,
       url: 'https://www.facebook.com/studioclip.Official'
     },
     {
       id: 'youtube',
-      blackIcon: '/youtube_50px.png',
-      colorIcon: '/youtube_color.png',
+      blackIcon: '/youtube_50px.svg',
+      colorIcon: '/youtube_color.svg',
       width: 50,
       height: 50,
       url: 'https://www.youtube.com/@StudioClip_'
     },
     {
       id: 'tiktok',
-      blackIcon: '/tiktok_50px.png',
-      colorIcon: '/tiktok_color.png',
+      blackIcon: '/tiktok_50px.svg',
+      colorIcon: '/tiktok_color.svg',
       width: 50,
       height: 50,
       url: 'https://www.tiktok.com/@studio.clip'
