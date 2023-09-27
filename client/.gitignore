@@ -36,3 +36,6 @@ next-env.d.ts
 
 # test page
 /src/app/test/*
+
+# firebase
+/.firebase
