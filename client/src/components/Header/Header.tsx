@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { header } from "@/models/header/header";
 import HamburgerMenu from "@/components/Header/Adapter/hamburger";
-import Logo from "@comp/Header/Adapter/Logo";
+import Logo from "@comp/Header/components/Logo";
 
 export default function StudioHeader() {
   return (
