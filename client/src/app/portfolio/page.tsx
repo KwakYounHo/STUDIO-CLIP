@@ -1,8 +1,8 @@
 import * as React from "react";
-import Image from "next/image";
 import { portfolioPageNum } from "@/models/portfolio/portfolioPage";
 import type { Metadata } from "next";
 import { constants } from "@/app/common/domain/models/headTitle";
+import ImageRenderer from "@/utils/imageRenderer";
 
 export const metadata: Metadata = {
   title: constants.createTitle("Portfolio"),
@@ -15,19 +15,7 @@ const portfolio: React.FC = () => {
         "flex flex-col gap-10 items-center justify-center text-content-text"
       }
     >
-      {portfolioPageNum.range.map((element) => {
-        return (
-          <Image
-            src={`/info/English/infoPage${element}.png`}
-            width={2160}
-            height={1495}
-            alt={`${element}page IMG`}
-            key={element}
-            className={"w-screen"}
-            priority
-          />
-        );
-      })}
+      <ImageRenderer page={portfolioPageNum} lang="English" />
     </main>
   );
 };

@@ -1,9 +1,9 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import { constants } from "@/app/common/domain/models/headTitle";
-import { aboutPageNum } from "@/models/about/aboutPage";
 import SelectLanguage from "@/utils/SelectLanguage";
-import Image from "next/image";
+import ImageRenderer from "@/utils/imageRenderer";
+import { aboutPageNum } from "@/models/about/aboutPage";
 
 export const metadata: Metadata = {
   title: constants.createTitle("About"),
@@ -17,19 +17,7 @@ const About: React.FC = () => {
       }
     >
       <SelectLanguage page={"about"} className={"w-10/12"} />
-      {aboutPageNum.range.map((element) => {
-        return (
-          <Image
-            src={`/info/English/infoPage${element}.png`}
-            width={2160}
-            height={1495}
-            alt={`${element}page IMG`}
-            key={element}
-            className={"w-screen"}
-            priority
-          />
-        );
-      })}
+      <ImageRenderer page={aboutPageNum} lang={"English"} />
     </main>
   );
 };

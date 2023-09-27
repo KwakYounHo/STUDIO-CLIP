@@ -1,13 +1,15 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { aboutPageNum } from "@/models/about/aboutPage";
 import SelectLanguage from "@/utils/SelectLanguage";
 import Image from "next/image";
+import ImageRenderer from "@/utils/imageRenderer";
 
 const Language: React.FC = () => {
   const pathname = usePathname();
+  const language = pathname.split("/")[3]
 
   return (
     <main
@@ -16,19 +18,7 @@ const Language: React.FC = () => {
       }
     >
       <SelectLanguage page={"about"} className={"w-10/12"} />
-      {aboutPageNum.range.map((element) => {
-        return (
-          <Image
-            src={`/info/${pathname.split("/")[3]}/infoPage${element}.png`}
-            width={2160}
-            height={1495}
-            alt={`${element}page IMG`}
-            key={element}
-            className={"w-screen"}
-            priority
-          />
-        );
-      })}
+      <ImageRenderer page={aboutPageNum} lang={language} />
     </main>
   );
 };

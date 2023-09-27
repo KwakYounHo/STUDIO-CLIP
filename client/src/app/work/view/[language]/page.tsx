@@ -1,13 +1,14 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { workPageNum } from "@/models/work/workPage";
 import SelectLanguage from "@/utils/SelectLanguage";
 import { usePathname } from "next/navigation";
+import ImageRenderer from "@/utils/imageRenderer";
 
 const Work: React.FC = () => {
   const pathname = usePathname();
+  const language = pathname.split("/")[3]
 
   return (
     <main
@@ -16,19 +17,7 @@ const Work: React.FC = () => {
       }
     >
       <SelectLanguage page={"work"} className={"w-10/12"} />
-      {workPageNum.range.map((element) => {
-        return (
-          <Image
-            src={`/info/${pathname.split("/")[3]}/infoPage${element}.png`}
-            width={2160}
-            height={1495}
-            alt={`${element}page IMG`}
-            key={element}
-            className={"w-screen"}
-            priority
-          />
-        );
-      })}
+      <ImageRenderer page={workPageNum} lang={language} />
     </main>
   );
 };
