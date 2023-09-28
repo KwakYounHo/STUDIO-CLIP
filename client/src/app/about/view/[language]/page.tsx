@@ -1,16 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { useRouter, usePathname } from "next/navigation";
 import { aboutPageNum } from "@/models/about/aboutPage";
 import SelectLanguage from "@/utils/SelectLanguage";
-import Image from "next/image";
-import ImageRenderer from "@/utils/imageRenderer";
+import InfoPageImgContainer from "@/containers/InfoPageImgContainer";
+import { usePathname } from "next/navigation";
 
 const Language: React.FC = () => {
-  const pathname = usePathname();
-  const language = pathname.split("/")[3]
-
+  const lang = usePathname().split("/")[3];
   return (
     <main
       className={
@@ -18,7 +15,7 @@ const Language: React.FC = () => {
       }
     >
       <SelectLanguage page={"about"} className={"w-10/12"} />
-      <ImageRenderer page={aboutPageNum} lang={language} />
+      <InfoPageImgContainer pages={aboutPageNum} lang={lang} />
     </main>
   );
 };

@@ -4,11 +4,11 @@ import * as React from "react";
 import { workPageNum } from "@/models/work/workPage";
 import SelectLanguage from "@/utils/SelectLanguage";
 import { usePathname } from "next/navigation";
-import ImageRenderer from "@/utils/imageRenderer";
+import InfoPageImgContainer from "@/containers/InfoPageImgContainer";
 
 const Work: React.FC = () => {
   const pathname = usePathname();
-  const language = pathname.split("/")[3]
+  const language = pathname.split("/")[3];
 
   return (
     <main
@@ -17,7 +17,7 @@ const Work: React.FC = () => {
       }
     >
       <SelectLanguage page={"work"} className={"w-10/12"} />
-      <ImageRenderer page={workPageNum} lang={language} />
+      <InfoPageImgContainer pages={workPageNum} lang={language} />
     </main>
   );
 };
