@@ -1,4 +1,4 @@
-import { Koulen, East_Sea_Dokdo } from "next/font/google";
+import { Koulen, Nanum_Gothic_Coding } from "next/font/google";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { constants } from "@/app/common/domain/models/headTitle";
@@ -9,7 +9,7 @@ const koulen = Koulen({
   subsets: ["latin"],
   weight: ["400"],
 });
-const harmattan = East_Sea_Dokdo({
+const nanumGothicCoding = Nanum_Gothic_Coding({
   subsets: ["latin"],
   weight: ["400"]
 })
@@ -23,9 +23,9 @@ const Home: React.FC = () => {
     <main className={"home_main"}>
       {/* title */}
       <div className={`${koulen.className} text-center select-none`}>
-        <div className={`${harmattan.className}`}>
-          <span className={`text-sm md:text-lg font-thin tracking-[-1px] m-1 md:mr-2`}>From</span>
-          <span className={`text-2xl md:text-4xl tracking-tight`}>KOREA</span>
+        <div className={`${nanumGothicCoding.className}`}>
+          <span className={`text-xs md:text-xs font-thin tracking-[-0.5px] m-1 md:mr-2`}>From</span>
+          <span className={`text-base md:text-lg tracking-tight`}>KOREA</span>
         </div>
         <h1 className={"leading-none text-6xl md:text-8xl"}>studio clip</h1>
         <h2
