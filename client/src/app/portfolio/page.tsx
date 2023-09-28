@@ -15,7 +15,7 @@ const portfolio: React.FC = () => {
         "flex flex-col gap-10 items-center justify-center text-content-text"
       }
     >
-      <InfoPageImgContainer pages={portfolioPageNum} lang="English" />
+      <InfoPageImgContainer pages={portfolioPageNum} />
     </main>
   );
 };

@@ -1,22 +1,24 @@
-"use client";
-
 import * as React from "react";
 import { aboutPageNum } from "@/models/about/aboutPage";
-import SelectLanguage from "@/utils/SelectLanguage";
 import InfoPageImgContainer from "@/containers/InfoPageImgContainer";
-import { usePathname } from "next/navigation";
+import { Metadata } from "next";
+import { constants } from "@/app/common/domain/models/headTitle";
 
-const Language: React.FC = () => {
-  const lang = usePathname().split("/")[3];
-  return (
-    <main
-      className={
-        "flex flex-col gap-10 items-center justify-center text-content-text"
-      }
-    >
-      <SelectLanguage page={"about"} className={"w-10/12"} />
-      <InfoPageImgContainer pages={aboutPageNum} lang={lang} />
-    </main>
-  );
+type LangProps = {
+  params: {
+    language: string;
+  };
+};
+
+export const generateMetadata = async ({
+  params,
+}: LangProps): Promise<Metadata> => {
+  return {
+    title: constants.createTitle(`About - ${params.language}`),
+  };
+};
+
+const Language: React.FC<LangProps> = async ({ params }) => {
+  return <InfoPageImgContainer pages={aboutPageNum} lang={params.language} />;
 };
 export default Language;

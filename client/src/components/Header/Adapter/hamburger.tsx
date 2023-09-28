@@ -40,7 +40,7 @@ const HamburgerMenu: React.FC<Props> = () => {
       {toggle && (
         <div
           className={
-            "absolute right-0 top-[72px] w-full bg-menu-bg opacity-100 text-sm tracking-tight rounded-b-lg border-t-2 border-t-black"
+            "absolute right-0 top-[72px] w-full bg-menu-bg opacity-100 text-sm tracking-tight rounded-b-lg border-t-2 border-t-black z-[9997]"
           }
         >
           <ul className={"uppercase"}>

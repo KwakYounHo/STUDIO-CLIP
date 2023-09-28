@@ -1,3 +1,4 @@
 export const constants = {
-  createTitle: (title: string='') => `STUDIO CLIP ${title!==''? '-':''} ${title}`
-}
+  createTitle: (title: string = "") =>
+    `${title && title}${title && "::"}STUDIO CLIP`,
+};

@@ -6,9 +6,9 @@ export type GetURLParams = {
     page: string
     range: number[]
   }
-  lang: string
+  lang?: string
 }
-const getDownloadImgURL = async ({ pages, lang }: GetURLParams): Promise<string[]> => {
+const getDownloadImgURL = async ({ pages, lang = "English" }: GetURLParams): Promise<string[]> => {
   let items: string[] = []
   for (const element of pages.range) {
     const requestURL = `/img/info/${lang}/infoPage${element}.png`;

@@ -1,24 +1,24 @@
-"use client";
-
 import * as React from "react";
 import { workPageNum } from "@/models/work/workPage";
-import SelectLanguage from "@/utils/SelectLanguage";
-import { usePathname } from "next/navigation";
 import InfoPageImgContainer from "@/containers/InfoPageImgContainer";
+import { constants } from "@/app/common/domain/models/headTitle";
+import { Metadata } from "next";
 
-const Work: React.FC = () => {
-  const pathname = usePathname();
-  const language = pathname.split("/")[3];
+type LangProps = {
+  params: {
+    language: string;
+  };
+};
 
-  return (
-    <main
-      className={
-        "flex flex-col gap-10 items-center justify-center text-content-text"
-      }
-    >
-      <SelectLanguage page={"work"} className={"w-10/12"} />
-      <InfoPageImgContainer pages={workPageNum} lang={language} />
-    </main>
-  );
+export const generateMetadata = async ({
+  params,
+}: LangProps): Promise<Metadata> => {
+  return {
+    title: constants.createTitle(`work - ${params.language}`),
+  };
+};
+
+const Work: React.FC<LangProps> = ({ params }) => {
+  return <InfoPageImgContainer pages={workPageNum} lang={params.language} />;
 };
 export default Work;
