@@ -12,7 +12,7 @@ const AboutLayout = async ({
         "flex flex-col gap-10 items-center justify-center text-content-text"
       }
     >
-      <SelectLanguage page={"about"} className={"w-10/12"} />
+      <SelectLanguage page={"work"} className={"w-10/12"} />
       {children}
     </main>
   );
