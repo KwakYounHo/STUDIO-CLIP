@@ -32,7 +32,7 @@ const ImageRenderer: React.FC<Props> = ({ page, lang }) => {
           };
           setImgURLs((prevItem) => [...prevItem, item]);
         } catch (e) {
-          console.error("파일 다운로드 에러 : ");
+          console.error("파일 다운로드 에러 : ", e);
         }
       }
     };
@@ -44,13 +44,12 @@ const ImageRenderer: React.FC<Props> = ({ page, lang }) => {
       {imgURLs.map((element) => {
         return (
           <div key={element.url}>
-            <Image
+            <img
               src={element.url}
               width={2160}
               height={1495}
               alt={"aboutPageIMG"}
               className={"w-screen"}
-              priority
             />
           </div>
         );
