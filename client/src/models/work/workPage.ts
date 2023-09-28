@@ -1,3 +1,4 @@
 export const workPageNum = {
-  range: [4]
-}
+  page: "work",
+  range: [4],
+};

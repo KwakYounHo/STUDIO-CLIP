@@ -1,3 +1,4 @@
 export const portfolioPageNum = {
-  range: [5, 6, 7]
-}
+  page: "portfolio",
+  range: [5, 6, 7],
+};
