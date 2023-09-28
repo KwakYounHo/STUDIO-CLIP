@@ -2,7 +2,6 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import * as React from "react";
-import Loading from "@/app/loading";
 
 import StudioHeader from "@comp/Header/Header";
 import StudioFooter from "@comp/Footer/Footer";
@@ -20,12 +19,10 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <React.Suspense fallback={<Loading />}>
-          <StudioHeader />
+        <StudioHeader />
           {children}
-          <StudioFooter />
-          <Toaster containerClassName="z-9999" position="bottom-left" />
-        </React.Suspense>
+        <StudioFooter />
+        <Toaster containerClassName="z-9999" position="bottom-left" />
       </body>
     </html>
   );
