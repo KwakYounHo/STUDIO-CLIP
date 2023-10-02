@@ -205,7 +205,7 @@ const ContactForm: React.FC = () => {
           <textarea
             {...register("body", { required: true })}
             className={"w-full h-60 resize-none p-1"}
-            placeholder="(*)표시가 있는 항목은 필수로 입력해야 합니다)"
+            placeholder="(*) is required input)"
           />
           {errors.body && (
             <span className={"invalidData"}>Detail is required</span>
