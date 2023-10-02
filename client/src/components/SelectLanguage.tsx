@@ -9,7 +9,9 @@ type Props = React.ComponentProps<"div"> & {
 const SelectLanguage: React.FC<Props> = ({ className, setter }) => {
   return (
     <div
-      className={`${className} flex flex-col justify-center items-center text-center mt-4 md:mt-7`}
+      className={`flex flex-col justify-center items-center text-center mt-4 md:mt-7 w-full px-7 md:px-32 ${
+        className ? className : ""
+      }`}
     >
       <p
         className={

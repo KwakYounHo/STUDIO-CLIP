@@ -14,9 +14,7 @@ const InfoPageImgContainer = ({
 
   return (
     <>
-      {imgObject.ko && imgObject.my && (
-        <SelectLanguage setter={setSetLang} className={"w-10/12"} />
-      )}
+      {imgObject.ko && imgObject.my && <SelectLanguage setter={setSetLang} />}
       {imgObject[setLang].map((url) => {
         return <InfoPageImgRenderer url={url} key={url} />;
       })}
