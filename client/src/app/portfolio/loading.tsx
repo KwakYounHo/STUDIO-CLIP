@@ -2,10 +2,9 @@
 
 import * as React from "react";
 import Lottie from "react-lottie-player";
-
 import imgComponentLoadingFile from "@pub/imgComponentLoading.json";
 
-const AboutLoading: React.FC = () => {
+const PortfolioLoading: React.FC = (async) => {
   return (
     <div
       className={
@@ -24,4 +23,4 @@ const AboutLoading: React.FC = () => {
     </div>
   );
 };
-export default AboutLoading;
+export default PortfolioLoading;

@@ -1,20 +1,25 @@
+"use client";
+
 import * as React from "react";
 
-import getDownloadImgURL, {
-  GetURLParams,
-} from "@/utils/infoPageImgGetDownloadURL";
 import InfoPageImgRenderer from "@/components/InfoPageImgRenderer";
+import SelectLanguage from "@/components/SelectLanguage";
 
-const InfoPageImgContainer = async ({
-  pages,
-  lang,
-}: GetURLParams): Promise<React.JSX.Element> => {
-  const items = await getDownloadImgURL({ pages, lang });
+const InfoPageImgContainer = ({
+  imgObject,
+}: {
+  imgObject: { [key: string]: string[] };
+}): React.JSX.Element => {
+  const [setLang, setSetLang] = React.useState<string>("en");
+
   return (
     <>
-      {items.map((items) => (
-        <InfoPageImgRenderer url={items} key={items} />
-      ))}
+      {imgObject.ko && imgObject.my && (
+        <SelectLanguage setter={setSetLang} className={"w-10/12"} />
+      )}
+      {imgObject[setLang].map((url) => {
+        return <InfoPageImgRenderer url={url} />;
+      })}
     </>
   );
 };
