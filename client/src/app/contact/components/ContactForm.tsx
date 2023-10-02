@@ -205,7 +205,7 @@ const ContactForm: React.FC = () => {
           <textarea
             {...register("body", { required: true })}
             className={"w-full h-60 resize-none p-1"}
-            placeholder="(*) is required input)"
+            placeholder="(*) is required input"
           />
           {errors.body && (
             <span className={"invalidData"}>Detail is required</span>
