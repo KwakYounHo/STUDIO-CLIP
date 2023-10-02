@@ -1,5 +1,5 @@
 import * as React from "react";
-import ContactForm from "@/components/Contact/ContactForm";
+import ContactForm from "@/app/contact/components/ContactForm";
 
 const InquiryContainer: React.FC = () => {
   return (

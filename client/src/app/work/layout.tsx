@@ -1,5 +1,5 @@
 import * as React from "react";
-import SelectLanguage from "@/utils/SelectLanguage";
+import SelectLanguage from "@/components/SelectLanguage";
 
 const AboutLayout = async ({
   children,

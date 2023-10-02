@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import {
   SendMailLoading,
   SendMailSuccess,
-} from "@/components/Contact/Adapter/SendingModal";
+} from "@/app/contact/Adapter/SendingModal";
 
 type ContactInputType = {
   title: string;
