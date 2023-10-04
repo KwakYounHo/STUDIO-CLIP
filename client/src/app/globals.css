@@ -23,9 +23,9 @@ nav {
   @apply min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text
 }
 
-/* About */
-#Page01 {
-  @apply relative flex justify-center items-center text-content-text
+/* info detail component */
+.infoDetailPage {
+  @apply w-full flex flex-col justify-center items-center flex-shrink-0 my-44
 }
 
 /* Contact */
