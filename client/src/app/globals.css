@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./css/font.css";
+@import "./main.css";
+@import "./contact/contact.css";
+
 body {
   @apply h-screen flex flex-col items-center bg-studioBackground
 }
@@ -18,67 +22,9 @@ nav {
   @apply uppercase hidden md:flex items-center space-x-5 md:text-sm lg:text-base
 }
 
-/* Home */
-.home_main {
-  @apply min-h-[500px] w-full h-full flex flex-col items-center justify-center space-y-[4rem] text-content-text
-}
-
 /* info detail component */
 .infoDetailPage {
   @apply w-full flex flex-col justify-center items-center flex-shrink-0 my-44
-}
-
-/* Contact */
-.contactForm {
-  @apply flex flex-col gap-11 p-7 lg:p-0
-}
-.contactForm label {
-  @apply text-content-text capitalize text-sm font-semibold
-}
-.contactForm input {
-  @apply bg-studioBackground border-b-2 text-content-text h-7
-}
-.contactForm .required-input {
-  @apply after:content-['*'] after:ml-0.5 after:text-red-400
-}
-.contactForm .formBox {
-  @apply flex flex-col gap-2
-}
-.contactForm .formSubBox {
-  @apply flex flex-col lg:flex-row gap-2
-}
-.contactForm .formSubBox input {
-  @apply w-full
-}
-.contactForm .formSubBoxWrapper {
-  @apply lg:w-2/4 flex flex-col gap-2 flex-wrap
-}
-.contactFormContainer {
-  @apply w-screen lg:w-auto lg:h-screen flex flex-col items-center justify-center gap-16
-}
-.contactFormTitle {
-  @apply uppercase text-content-text text-4xl font-black mt-20 lg:mt-0
-}
-.invalidData {
-  @apply text-red-300 my-1 text-xs
-}
-.disabledInput {
-  @apply opacity-50
-}
-.modalWrapper {
-  @apply w-screen h-screen fixed left-0 top-0 z-[9998]
-}
-.modalBackground {
-  @apply bg-black/75 w-full h-full flex justify-center items-center
-}
-.modalContent {
-  @apply lg:w-1/2 lg:h-3/4 bg-white rounded-lg flex-col flex justify-center items-center lg:gap-7
-}
-/* input spinner */
-.contactForm input::-webkit-outer-spin-button,
-.contactForm input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 /* :root {
