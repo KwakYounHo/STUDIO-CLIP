@@ -1,9 +1,10 @@
 import * as React from "react";
 import { appleSD, impact } from "@/utils/localFontManage";
+import HistoryBar from "@/app/about/components/HistoryBar";
 
-const AboutPage: React.FC = async () => {
+const Test: React.FC = async () => {
   return (
-    <main className={"container p-4 md:p-0 text-white"}>
+    <main className={`container p-4 md:p-0 text-white ${appleSD.className}`}>
       {/* page1 */}
       <div id="page01" className={"infoDetailPage flex flex-col gap-14"}>
         <div id="title01" className={"text-center"}>
@@ -14,7 +15,7 @@ const AboutPage: React.FC = async () => {
             myanmar
           </h2>
         </div>
-        <div id="subTitle01" className={`${appleSD.className} text-center`}>
+        <div id="subTitle01" className={`text-center`}>
           <p className={"text-xl"}>STUDIO CLIP Corp.</p>
           <p className={"capitalize px-7 py-2 mt-2"}>
             Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon,
@@ -29,17 +30,24 @@ const AboutPage: React.FC = async () => {
       </div>
 
       {/* page2 */}
-      <div id="page02" className={"infoDetailPage"}>
-        <div id="title02">
-          <h1 className={"uppercase text-7xl"}>vision & mission</h1>
+      <div id="page02" className={"infoDetailPage gap-7"}>
+        <div id="title02" className={"text-center"}>
+          <h1 className={`text-7xl font-bold uppercase ${impact.className}`}>
+            vision & mission
+          </h1>
         </div>
-        <div id="subTitle02">
-          <h2>
+        <div id="subTitle02" className={`text-center font-semibold`}>
+          <h2
+            className={`before:content-['"'] before:text-appleSD before:text-4xl before:relative before:top-2 before:mr-3 before:leading-none after:content-['"'] after:text-appleSD after:text-4xl after:relative after:top-2 after:ml-3 after:leading-none text-2xl`}
+          >
             With the power of video, Studio Clip aims to outspread the beautiful
             culture of Myanmar
           </h2>
         </div>
-        <div id="subArticle02">
+        <div
+          id="subArticle02"
+          className={`flex flex-col gap-3 text-center ${appleSD.className}`}
+        >
           <p>
             We are dedicated to showcasing the diverse narratives of Myanmar
             through video, striving to convey their profound significance and
@@ -50,7 +58,10 @@ const AboutPage: React.FC = async () => {
             Myanmar
           </p>
         </div>
-        <div id="article02">
+        <div
+          id="article02"
+          className={`flex flex-col gap-3 bg-white/25 p-3 text-center ${appleSD.className}`}
+        >
           <p>
             Based on our production experience in a variety of videos with
             numerous organizations and companies in Korea, we have produced 100%
@@ -74,57 +85,12 @@ const AboutPage: React.FC = async () => {
       </div>
 
       {/* page3 */}
-      <div id="page03" className={"infoDetailPage"}>
+      <div id="page03" className={"infoDetailPage gap-20"}>
         <div id="title03">
-          <h1 className={"uppercase"}>history</h1>
+          <h1 className={`uppercase ${impact.className} text-7xl`}>history</h1>
         </div>
         <div id="article03">
-          <div>
-            <h1 className={"capitalize"}>the rebel studio</h1>
-            <h2 className={"capitalize"}>founded</h2>
-            <h3>2020</h3>
-          </div>
-          <div>
-            <p>Video Production of</p>
-            <p>The Cyber Security Council of</p>
-            <p>The Cultural Heritage Administration</p>
-          </div>
-          <div>
-            <p>Video Production For</p>
-            <p>National Research Institute of</p>
-            <p>Cultural Heritage</p>
-          </div>
-          <div>
-            <p>Samsung Galaxy</p>
-            <p>Event Video</p>
-          </div>
-          <div>
-            <p>Video Production For</p>
-            <p>The Ministry of</p>
-            <p>Health & Welfare</p>
-          </div>
-          <div>
-            <p>Military of Korea</p>
-            <p>M&S International Conference</p>
-          </div>
-          <div>
-            <p>Promotional Video Production For</p>
-            <p>The Biographical Novel of</p>
-            <p>the 18th President of Korea</p>
-          </div>
-          <div>
-            <p>United Cities &</p>
-            <p>Local Government</p>
-          </div>
-          <div>
-            <p>International ConferencKorea</p>
-            <p>University Hybrid</p>
-          </div>
-          <div>
-            <h3>2023</h3>
-            <h2 className={"capitalize"}>founding of</h2>
-            <h1 className={"capitalize"}>studio clip myanmar</h1>
-          </div>
+          <HistoryBar />
         </div>
         <div id="subTitle03">
           <p>
@@ -139,11 +105,11 @@ const AboutPage: React.FC = async () => {
       </div>
 
       {/* page4 */}
-      <div id="page04" className={"infoDetailPage"}>
+      <div id="page04" className={"infoDetailPage gap-7"}>
         <div id="title04">
-          <h1 className={"uppercase"}>customer</h1>
+          <h1 className={`uppercase ${impact.className} text-7xl`}>customer</h1>
         </div>
-        <div id="enName">
+        <div id="enName" className={"flex flex-col gap-2 text-center"}>
           <p>
             Cheongju Broadcasting Co., Ltd. | DAEJEON METROPOLITAN CITY | Gongju
             City | Korea University
@@ -186,4 +152,4 @@ const AboutPage: React.FC = async () => {
     </main>
   );
 };
-export default AboutPage;
+export default Test;
