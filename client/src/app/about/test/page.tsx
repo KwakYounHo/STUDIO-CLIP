@@ -1,12 +1,18 @@
 import * as React from "react";
 import { appleSD, impact } from "@/utils/localFontManage";
+import { constants } from "@/app/common/domain/models/headTitle";
+import type { Metadata } from "next";
 
 import HistoryBar from "@/app/about/components/HistoryBar";
 import CustomerImg from "@/app/about/components/CustomerImg";
 
 import "@/app/about/test/about.css";
 
-const Test: React.FC = async () => {
+export const metadata: Metadata = {
+  title: constants.createTitle("About"),
+};
+
+const About: React.FC = async () => {
   return (
     <main className={`container p-4 md:p-0 text-white ${appleSD.className}`}>
       {/* page1 */}
@@ -188,4 +194,4 @@ const Test: React.FC = async () => {
     </main>
   );
 };
-export default Test;
+export default About;
