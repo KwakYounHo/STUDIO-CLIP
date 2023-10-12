@@ -4,7 +4,7 @@ import { appleSD, impact } from "@/utils/localFontManage";
 import HistoryBar from "@/app/about/components/HistoryBar";
 import CustomerImg from "@/app/about/components/CustomerImg";
 
-import "@/app/about/components/about.css";
+import "@/app/about/test/about.css";
 
 const Test: React.FC = async () => {
   return (
