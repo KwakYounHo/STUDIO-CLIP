@@ -9,9 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        AboutPage01: "url('/BG/page01BG.jpg')",
+        page020408: "url('/BG/page020408BG.jpg')",
       },
       colors: {
         studioBackground: "black",
