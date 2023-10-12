@@ -13,7 +13,7 @@ const Test: React.FC = async () => {
       <div
         id="page01"
         className={
-          "infoDetailPage flex flex-col gap-14 bg-AboutPage01 bg-cover bg-center bg-no-repeat"
+          "infoDetailPage flex flex-col gap-14 bg-AboutPage01 bg-cover bg-top bg-no-repeat"
         }
       >
         <div id="title01" className={"text-center mt-10"}>
