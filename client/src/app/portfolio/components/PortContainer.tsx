@@ -10,8 +10,8 @@ const PortContainer: React.FC<Props> = ({ subTitle, imgWrap }) => {
   return (
     <div className={"text-white p-8"}>
       <div className={"flex flex-col md:flex-row md:gap-10 md:items-end mb-8"}>
-        <h1 className={`${impact.className} text-7xl`}>portfolio</h1>
-        <h2 className={`${appleSD.className} text-3xl font-semibold md:pb-3`}>
+        <h1 className={`${impact.className} text-7xl uppercase`}>portfolio</h1>
+        <h2 className={`${appleSD.className} text-3xl font-semibold md:pb-1`}>
           {subTitle}
         </h2>
       </div>
