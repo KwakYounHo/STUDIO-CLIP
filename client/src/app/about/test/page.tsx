@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 
 import HistoryBar from "@/app/about/components/HistoryBar";
 import CustomerImg from "@/app/about/components/CustomerImg";
+import FirstPage from "@/app/about/components/FirstPage";
 
 import "@/app/about/test/about.css";
 
@@ -19,29 +20,10 @@ const About: React.FC = async () => {
       <div
         id="page01"
         className={
-          "infoDetailPage flex flex-col gap-14 bg-AboutPage01 bg-cover bg-top bg-no-repeat"
+          "infoDetailPage flex flex-col gap-14 bg-AboutPage01 bg-cover bg-top bg-no-repeat h-[1000px]"
         }
       >
-        <div id="title01" className={"text-center mt-10"}>
-          <h1 className={`${impact.className} text-7xl`}>studio clip</h1>
-          <h2
-            className={`${impact.className} uppercase text-2xl font-light tracking-[2.2rem] leading-none ml-6`}
-          >
-            myanmar
-          </h2>
-        </div>
-        <div id="subTitle01" className={`text-center mb-10`}>
-          <p className={"text-xl"}>STUDIO CLIP Corp.</p>
-          <p className={"capitalize px-7 py-2 mt-2"}>
-            Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon,
-            Myanmar
-          </p>
-          <div className={"text-sm px-7 py-2"}>
-            <p>https://studioclip.video</p>
-            <p>https://facebook.com/studioclip.Official</p>
-            <p>09 88413 9136</p>
-          </div>
-        </div>
+        <FirstPage />
       </div>
 
       {/* page2 */}
@@ -108,14 +90,33 @@ const About: React.FC = async () => {
       </div>
 
       {/* page3 */}
-      <div id="page03" className={"infoDetailPage gap-20"}>
+      <div id="page03" className={"infoDetailPage gap-7"}>
         <div id="title03">
-          <h1 className={`uppercase ${impact.className} text-7xl`}>history</h1>
+          <h1 className={`uppercase ${impact.className} text-7xl mb-12`}>
+            history
+          </h1>
         </div>
-        <div id="article03">
-          <HistoryBar />
+        <div
+          id="article03"
+          className={
+            "grid lg:grid-cols-3 gap-5 lg:gap-0 justify-center items-center"
+          }
+        >
+          <div className="grid grid-cols-3 lg:grid-cols-1 lg:gap-24">
+            <img src="/history/01.png" alt="history1" />
+            <img src="/history/02.png" alt="history2" />
+            <img src="/history/03.png" alt="history3" />
+          </div>
+          <div className={"flex justify-center"}>
+            <HistoryBar />
+          </div>
+          <div className="grid grid-cols-3 lg:grid-cols-1 lg:gap-24">
+            <img src="/history/04.png" alt="history4" />
+            <img src="/history/05.png" alt="history5" />
+            <img src="/history/06.png" alt="history6" />
+          </div>
         </div>
-        <div id="subTitle03">
+        <div id="subTitle03" className={"text-center md:text-xl"}>
           <p>
             “Studio Clip” aims to help contribute the video technicians and
             everyone who want to
@@ -167,29 +168,11 @@ const About: React.FC = async () => {
       <div
         id="page05"
         className={
-          "infoDetailPage flex flex-col gap-14 bg-AboutPage01 bg-cover bg-bottom bg-no-repeat"
+          "infoDetailPage relative flex flex-col gap-14 bg-aboutEnd bg-cover bg-top bg-no-repeat h-[1000px]"
         }
       >
-        <div id="title05" className={"text-center mt-10"}>
-          <h1 className={`${impact.className} text-7xl`}>studio clip</h1>
-          <h2
-            className={`${impact.className} uppercase text-2xl font-light tracking-[2.2rem] leading-none ml-6`}
-          >
-            myanmar
-          </h2>
-        </div>
-        <div id="subTitle05" className={`${appleSD.className} text-center`}>
-          <p className={"text-xl"}>STUDIO CLIP Corp.</p>
-          <p className={"capitalize px-7 py-2 mt-2"}>
-            Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon,
-            Myanmar
-          </p>
-          <div className={"text-sm px-7 py-2 mb-10"}>
-            <p>https://studioclip.video</p>
-            <p>https://facebook.com/studioclip.Official</p>
-            <p>09 88413 9136</p>
-          </div>
-        </div>
+        <div className={"absolute inset-0 bg-black/50"} />
+        <FirstPage />
       </div>
     </main>
   );

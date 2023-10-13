@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         AboutPage01: "url('/BG/page01BG.jpg')",
         page020408: "url('/BG/page020408BG.jpg')",
+        aboutEnd: "url('/BG/aboutEnd.png')",
       },
       colors: {
         studioBackground: "black",
