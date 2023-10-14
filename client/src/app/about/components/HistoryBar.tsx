@@ -1,4 +1,5 @@
 import * as React from "react";
+import { aboutPageLanguage } from "@/app/about/models/language";
 
 type Props = React.ComponentProps<"div"> & {};
 
@@ -13,45 +14,57 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
             }
           />
         </div>
+
+        {/* 01 */}
         <div className={"relative left-5 font-bold text-xl"}>
-          <h1 className={"capitalize"}>the rebel studio</h1>
-          <h2 className={"capitalize"}>founded</h2>
-          <h3 className={"text-4xl"}>2020</h3>
+          <h1 className={"capitalize"}>
+            {aboutPageLanguage.en.article03.first.first}
+          </h1>
+          <h2 className={"capitalize"}>
+            {aboutPageLanguage.en.article03.first.second}
+          </h2>
+          <h3 className={"text-4xl"}>
+            {aboutPageLanguage.en.article03.first.third}
+          </h3>
         </div>
       </div>
 
+      {/* 02 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Video Production of</p>
-          <p>The Cyber Security Council of</p>
-          <p>The Cultural Heritage Administration</p>
+          <p>{aboutPageLanguage.en.article03.second.first}</p>
+          <p>{aboutPageLanguage.en.article03.second.second}</p>
+          <p>{aboutPageLanguage.en.article03.second.third}</p>
         </div>
       </div>
 
+      {/* 03 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Video Production For</p>
-          <p>National Research Institute of</p>
-          <p>Cultural Heritage</p>
+          <p>{aboutPageLanguage.en.article03.third.first}</p>
+          <p>{aboutPageLanguage.en.article03.third.second}</p>
+          <p>{aboutPageLanguage.en.article03.third.third}</p>
         </div>
       </div>
 
+      {/* 04 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Samsung Galaxy</p>
-          <p>Event Video</p>
+          <p>{aboutPageLanguage.en.article03.fourth.first}</p>
+          <p>{aboutPageLanguage.en.article03.fourth.second}</p>
         </div>
       </div>
 
+      {/* 05 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
@@ -63,6 +76,7 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
+      {/* 06 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
@@ -73,6 +87,7 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
+      {/* 07 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
@@ -84,6 +99,7 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
+      {/* 08 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
@@ -94,6 +110,7 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
+      {/* 09 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] relative after:content-[''] after:w-[0.1rem] after:absolute after:h-[8rem] after:bg-content-text after:left-1/2 after:-bottom-20 after:-translate-x-1/2 flex justify-center items-center">
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
@@ -104,6 +121,7 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
+      {/* 10 */}
       <div className={"flex h-20 items-center"}>
         <div className="rounded-full w-[50px] h-[50px] bg-content-text">
           <div
