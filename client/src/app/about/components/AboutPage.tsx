@@ -30,36 +30,52 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
           }
         >
           <div className={"bg-black/50 absolute inset-0"} />
-          <div className={"relative flex flex-col gap-7"}>
-            <div id="title02" className={"text-center mt-10 w-full"}>
-              <h1
-                className={`text-7xl font-bold uppercase ${impact.className}`}
+          <div
+            className={"relative lg:flex lg:gap-3 justify-center items-center"}
+          >
+            <div className={"flex flex-col gap-7 lg:gap-16 max-w-[768px] p-2"}>
+              <div
+                id="title02"
+                className={"text-center mt-10 w-full flex flex-col gap-7"}
               >
-                vision & mission
-              </h1>
-            </div>
-            <div id="subTitle02" className={`text-center font-semibold`}>
-              <h2
-                className={`before:content-['"'] before:text-appleSD before:text-4xl before:relative before:top-2 before:mr-3 before:leading-none after:content-['"'] after:text-appleSD after:text-4xl after:relative after:top-2 after:ml-3 after:leading-none text-2xl`}
+                <h1
+                  className={`text-7xl font-bold uppercase ${impact.className}`}
+                >
+                  vision & mission
+                </h1>
+              </div>
+              <div id="subTitle02" className={`text-center font-semibold`}>
+                <h2
+                  className={`before:content-['"'] before:text-appleSD before:text-4xl before:relative before:top-2 before:mr-3 before:leading-none after:content-['"'] after:text-appleSD after:text-4xl after:relative after:top-2 after:ml-3 after:leading-none text-2xl`}
+                >
+                  {aboutPageLanguage[lang].subTitle02}
+                </h2>
+              </div>
+              <div
+                id="subArticle02"
+                className={`flex flex-col gap-3 text-center`}
               >
-                {aboutPageLanguage[lang].subTitle02}
-              </h2>
+                <p>{aboutPageLanguage[lang].subArticle02.first}</p>
+                <p>{aboutPageLanguage[lang].subArticle02.second}</p>
+              </div>
+              <div
+                id="article02"
+                className={`flex flex-col gap-3 bg-white/25 p-3 text-center mb-10 max-w-[970px]`}
+              >
+                <p>{aboutPageLanguage[lang].article02.first}</p>
+                <p>{aboutPageLanguage[lang].article02.second}</p>
+                <p>{aboutPageLanguage[lang].article02.third}</p>
+                <p>{aboutPageLanguage[lang].article02.fourth}</p>
+              </div>
             </div>
             <div
-              id="subArticle02"
-              className={`flex flex-col gap-3 text-center`}
+              className={
+                "md:grid md:grid-cols-3 lg:grid-cols-1 lg:w-1/4 lg:gap-4 lg:justify-between"
+              }
             >
-              <p>{aboutPageLanguage[lang].subArticle02.first}</p>
-              <p>{aboutPageLanguage[lang].subArticle02.second}</p>
-            </div>
-            <div
-              id="article02"
-              className={`flex flex-col gap-3 bg-white/25 p-3 text-center mb-10`}
-            >
-              <p>{aboutPageLanguage[lang].article02.first}</p>
-              <p>{aboutPageLanguage[lang].article02.second}</p>
-              <p>{aboutPageLanguage[lang].article02.third}</p>
-              <p>{aboutPageLanguage[lang].article02.fourth}</p>
+              <img src="/vissionMission/01.png" alt="vissionMission1" />
+              <img src="/vissionMission/02.png" alt="vissionMission2" />
+              <img src="/vissionMission/03.png" alt="vissionMission3" />
             </div>
           </div>
         </div>
@@ -83,7 +99,7 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
               <img src="/history/03.png" alt="history3" />
             </div>
             <div className={"flex justify-center"}>
-              <HistoryBar />
+              <HistoryBar lang={lang} />
             </div>
             <div className="grid grid-cols-3 lg:grid-cols-1 lg:gap-24">
               <img src="/history/04.png" alt="history4" />
@@ -92,14 +108,8 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
             </div>
           </div>
           <div id="subTitle03" className={"text-center md:text-xl"}>
-            <p>
-              “Studio Clip” aims to help contribute the video technicians and
-              everyone who want to
-            </p>
-            <p>
-              cultivate video production skill through education and promote
-              themselves
-            </p>
+            <p>{aboutPageLanguage[lang].subTitle03.first}</p>
+            <p>{aboutPageLanguage[lang].subTitle03.second}</p>
           </div>
         </div>
 
@@ -114,27 +124,16 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
           <div className={"relative w-full flex flex-wrap gap-7"}>
             <div id="title04" className={"mt-10 text-center w-full"}>
               <h1 className={`uppercase ${impact.className} text-7xl`}>
-                customer
+                {aboutPageLanguage[lang].title04}
               </h1>
             </div>
             <div
               id="enName"
               className={"flex flex-col gap-2 text-center w-full"}
             >
-              <p>
-                Cheongju Broadcasting Co., Ltd. | DAEJEON METROPOLITAN CITY |
-                Gongju City | Korea University
-              </p>
-              <p>
-                WOOSONG UNIVERSITY | KEPCO NUCLEAR FUEL | DAEJEON INSTITUTE OF
-                DESIGN PROMOTION | Korea Population, Health and Welfare
-                Association
-              </p>
-              <p>
-                Statistical Office | Cultural Heritage Administration | Customs
-                Service| Ministry of Oceans and Fisheries | National Library of
-                Korea, Sejong
-              </p>
+              <p>{aboutPageLanguage[lang].customerName.first}</p>
+              <p>{aboutPageLanguage[lang].customerName.second}</p>
+              <p>{aboutPageLanguage[lang].customerName.third}</p>
             </div>
             <div className={"carouselWrap w-full mb-10"}>
               <CustomerImg />

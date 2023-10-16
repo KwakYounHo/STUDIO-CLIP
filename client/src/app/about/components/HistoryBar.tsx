@@ -1,9 +1,11 @@
 import * as React from "react";
 import { aboutPageLanguage } from "@/app/about/models/language";
 
-type Props = React.ComponentProps<"div"> & {};
+type Props = React.ComponentProps<"div"> & {
+  lang: string;
+};
 
-const HistoryBar: React.FC<Props> = ({ className }) => {
+const HistoryBar: React.FC<Props> = ({ className, lang }) => {
   return (
     <div className={`${className ? className : ""} flex flex-col gap-7`}>
       <div className={"flex h-20 items-center"}>
@@ -18,13 +20,13 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
         {/* 01 */}
         <div className={"relative left-5 font-bold text-xl"}>
           <h1 className={"capitalize"}>
-            {aboutPageLanguage.en.article03.first.first}
+            {aboutPageLanguage[lang].article03.first.first}
           </h1>
           <h2 className={"capitalize"}>
-            {aboutPageLanguage.en.article03.first.second}
+            {aboutPageLanguage[lang].article03.first.second}
           </h2>
           <h3 className={"text-4xl"}>
-            {aboutPageLanguage.en.article03.first.third}
+            {aboutPageLanguage[lang].article03.first.third}
           </h3>
         </div>
       </div>
@@ -35,9 +37,9 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>{aboutPageLanguage.en.article03.second.first}</p>
-          <p>{aboutPageLanguage.en.article03.second.second}</p>
-          <p>{aboutPageLanguage.en.article03.second.third}</p>
+          <p>{aboutPageLanguage[lang].article03.second.first}</p>
+          <p>{aboutPageLanguage[lang].article03.second.second}</p>
+          <p>{aboutPageLanguage[lang].article03.second.third}</p>
         </div>
       </div>
 
@@ -47,9 +49,9 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>{aboutPageLanguage.en.article03.third.first}</p>
-          <p>{aboutPageLanguage.en.article03.third.second}</p>
-          <p>{aboutPageLanguage.en.article03.third.third}</p>
+          <p>{aboutPageLanguage[lang].article03.third.first}</p>
+          <p>{aboutPageLanguage[lang].article03.third.second}</p>
+          <p>{aboutPageLanguage[lang].article03.third.third}</p>
         </div>
       </div>
 
@@ -59,8 +61,8 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>{aboutPageLanguage.en.article03.fourth.first}</p>
-          <p>{aboutPageLanguage.en.article03.fourth.second}</p>
+          <p>{aboutPageLanguage[lang].article03.fourth.first}</p>
+          <p>{aboutPageLanguage[lang].article03.fourth.second}</p>
         </div>
       </div>
 
@@ -70,9 +72,9 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Video Production For</p>
-          <p>The Ministry of</p>
-          <p>Health & Welfare</p>
+          <p>{aboutPageLanguage[lang].article03.fiveth.first}</p>
+          <p>{aboutPageLanguage[lang].article03.fiveth.second}</p>
+          <p>{aboutPageLanguage[lang].article03.fiveth.third}</p>
         </div>
       </div>
 
@@ -82,8 +84,8 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Military of Korea</p>
-          <p>M&S International Conference</p>
+          <p>{aboutPageLanguage[lang].article03.sixth.first}</p>
+          <p>{aboutPageLanguage[lang].article03.sixth.second}</p>
         </div>
       </div>
 
@@ -93,9 +95,9 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>Promotional Video Production For</p>
-          <p>The Biographical Novel of</p>
-          <p>the 18th President of Korea</p>
+          <p>{aboutPageLanguage[lang].article03.seventh.first}</p>
+          <p>{aboutPageLanguage[lang].article03.seventh.second}</p>
+          <p>{aboutPageLanguage[lang].article03.seventh.third}</p>
         </div>
       </div>
 
@@ -105,8 +107,8 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>United Cities &</p>
-          <p>Local Government</p>
+          <p>{aboutPageLanguage[lang].article03.eighth.first}</p>
+          <p>{aboutPageLanguage[lang].article03.eighth.second}</p>
         </div>
       </div>
 
@@ -116,8 +118,8 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           <div className={"bg-white w-[25px] h-[25px] rounded-full"} />
         </div>
         <div className={"relative left-5"}>
-          <p>International ConferencKorea</p>
-          <p>University Hybrid</p>
+          <p>{aboutPageLanguage[lang].article03.nineth.first}</p>
+          <p>{aboutPageLanguage[lang].article03.nineth.second}</p>
         </div>
       </div>
 
@@ -131,9 +133,15 @@ const HistoryBar: React.FC<Props> = ({ className }) => {
           />
         </div>
         <div className={"relative left-5 font-bold text-xl"}>
-          <h3 className={"text-4xl"}>2023</h3>
-          <h2 className={"capitalize"}>founding of</h2>
-          <h1 className={"capitalize"}>studio clip myanmar</h1>
+          <h3 className={"text-4xl"}>
+            {aboutPageLanguage[lang].article03.tenth.first}
+          </h3>
+          <h2 className={"capitalize"}>
+            {aboutPageLanguage[lang].article03.tenth.second}
+          </h2>
+          <h1 className={"capitalize"}>
+            {aboutPageLanguage[lang].article03.tenth.third}
+          </h1>
         </div>
       </div>
     </div>
