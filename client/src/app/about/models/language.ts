@@ -172,21 +172,28 @@ export const aboutPageLanguage: AboutLang = {
   my: {
     // page02
     subTitle02:
+      //!
       "With the power of video, Studio Clip aims to outspread the beautiful culture of Myanmar",
     subArticle02: {
       first:
+        //!
         "We are dedicated to showcasing the diverse narratives of Myanmar through video, striving to convey their profound significance and greatness",
       second:
+        //!
         "We are committed to support the continuous growth and development of Myanmar",
     },
     article02: {
       first:
+        //!
         "Based on our production experience in a variety of videos with numerous organizations and companies in Korea, we have produced 100% customized videos from planning to directing, filming and editing with professional skills, using high-end equipment",
       second:
+        //!
         "As a result, we have completed 317 successful projects in various fields, including promotional videos, public service videos, and educational videos.",
       third:
+        //!
         "Established in Myanmar under the new name of “Studio Clip”, our mission is to bring joy, evoke emotion with great videos",
       fourth:
+        //!
         "We plan to create videos that promotes the beautiful culture of Myanmar and the thriving businesses",
     },
     // page03
@@ -240,8 +247,10 @@ export const aboutPageLanguage: AboutLang = {
     },
     subTitle03: {
       first:
+        //!
         "“Studio Clip” aims to help contribute the video technicians and everyone who want to",
       second:
+        //!
         "cultivate video production skill through education and promote themselves",
     },
     // page04

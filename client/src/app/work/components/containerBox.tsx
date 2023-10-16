@@ -1,7 +1,12 @@
 import * as React from "react";
 import { appleSD } from "@/utils/localFontManage";
+import { workPageLanguage } from "@/app/work/models/language";
 
-const ContainerBox: React.FC = () => {
+type Props = {
+  lang: string;
+};
+
+const ContainerBox: React.FC<Props> = ({ lang }) => {
   return (
     <>
       <ul
@@ -12,22 +17,15 @@ const ContainerBox: React.FC = () => {
             <img src="/work/01.png" alt="work01" className={"p-4"} />
           </div>
           <div className={"border-b-2 border-b-white inline-block mb-8"}>
-            <h1 className={"font-bold text-3xl pl-4 pr-2"}>
-              Content
+            <h1 className={"font-bold text-3xl pl-4 pr-2 capitalize"}>
+              {workPageLanguage[lang].contentProduction.title.first}
               <br />
-              Production
+              {workPageLanguage[lang].contentProduction.title.second}
             </h1>
           </div>
           <div className={"px-4 pb-4 text-lg"}>
-            <p>
-              Our ultimate goal is to discover influencers, create interesting
-              and enjoyable songs, game, food and produce contents related
-              Myanmar culture and informative insights, provide
-            </p>
-            <p>
-              opportunities to share their talents and spread joy with
-              enlightening experiences to the audience
-            </p>
+            <p>{workPageLanguage[lang].contentProduction.first}</p>
+            <p>{workPageLanguage[lang].contentProduction.second}</p>
           </div>
         </li>
 
@@ -36,21 +34,15 @@ const ContainerBox: React.FC = () => {
             <img src="/work/02.png" alt="work02" className={"p-4"} />
           </div>
           <div className={"border-b-2 border-b-white inline-block mb-8"}>
-            <h1 className={"font-bold text-3xl pl-4 pr-2"}>
-              Promotional
+            <h1 className={"font-bold text-3xl pl-4 pr-2 capitalize"}>
+              {workPageLanguage[lang].promotionalVideo.title.first}
               <br />
-              Video
+              {workPageLanguage[lang].promotionalVideo.title.second}
             </h1>
           </div>
           <div className={"px-4 pb-4 text-lg"}>
-            <p>
-              Through the promotional videos of various Myanmar companies,
-              organizations and tourist
-            </p>
-            <p>
-              attractions, we are dedicated to produce videos that allow more
-              people to help discover their quality and image.
-            </p>
+            <p>{workPageLanguage[lang].promotionalVideo.first}</p>
+            <p>{workPageLanguage[lang].promotionalVideo.second}</p>
           </div>
         </li>
 
@@ -59,17 +51,14 @@ const ContainerBox: React.FC = () => {
             <img src="/work/03.png" alt="work03" className={"p-4"} />
           </div>
           <div className={"border-b-2 border-b-white inline-block mb-8"}>
-            <h1 className={"font-bold text-3xl pl-4 pr-2"}>
+            <h1 className={"font-bold text-3xl pl-4 pr-2 capitalize"}>
               <br />
-              Event
+              {workPageLanguage[lang].event.title.second}
             </h1>
           </div>
           <div className={"px-4 pb-4 text-lg"}>
-            <p>
-              Studio Clip specialized in event planning and hosting for game
-              contest, events and shows that make one's normal daily life
-              extraordinary
-            </p>
+            <p>{workPageLanguage[lang].event.first}</p>
+            <p>{workPageLanguage[lang].event.second}</p>
           </div>
         </li>
 
@@ -78,19 +67,14 @@ const ContainerBox: React.FC = () => {
             <img src="/work/04.png" alt="work04" className={"p-4"} />
           </div>
           <div className={"border-b-2 border-b-white inline-block mb-8"}>
-            <h1 className={"font-bold text-3xl pl-4 pr-2"}>
+            <h1 className={"font-bold text-3xl pl-4 pr-2 capitalize"}>
               <br />
-              Solution
+              {workPageLanguage[lang].solution.title.second}
             </h1>
           </div>
           <div className={"px-4 pb-4 text-lg"}>
-            <p>
-              With our expertise by working with numerous companies in Korea, we
-              devoted to offer promotional and marketing strategies for the
-              outstanding Myanmar companies, aspiring to enter the Korean
-              market. Additionally, we also provide support for the local
-              expansion of numerous Korean businesses wishing to enter Myanmar
-            </p>
+            <p>{workPageLanguage[lang].solution.first}</p>
+            <p>{workPageLanguage[lang].solution.second}</p>
           </div>
         </li>
       </ul>
