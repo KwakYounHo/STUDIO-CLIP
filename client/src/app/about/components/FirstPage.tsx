@@ -1,5 +1,6 @@
 import * as React from "react";
 import { impact } from "@/utils/localFontManage";
+import Link from "next/link";
 
 const FirstPage: React.FC = () => {
   return (
@@ -22,9 +23,15 @@ const FirstPage: React.FC = () => {
         <p className={"capitalize md:text-xl"}>
           Royal Mg Bamar Residence, Dhamar Yone Street, Hlaing, Yangon, Myanmar
         </p>
-        <div className={"text-sm md:text-xl md:flex md:justify-center"}>
-          <p>https://studioclip.video</p>
-          <p>https://facebook.com/studioclip.Official</p>
+        <div
+          className={"text-sm md:text-xl md:flex md:justify-center md:gap-3"}
+        >
+          <Link href="http://studioclip.video" target="_blank">
+            <p>https://studioclip.video</p>
+          </Link>
+          <Link href="https://facebook.com/studioclip.Official" target="_blank">
+            <p>https://facebook.com/studioclip.Official</p>
+          </Link>
           <p>09 88413 9136</p>
         </div>
       </div>
