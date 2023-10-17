@@ -1,6 +1,9 @@
 export type AboutLang = {
   [key: string]: {
-    subTitle02: string;
+    subTitle02: {
+      first: string;
+      second: string;
+    };
     subArticle02: {
       first: string;
       second: string;

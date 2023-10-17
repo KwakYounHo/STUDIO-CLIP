@@ -3,8 +3,10 @@ import type { AboutLang } from "@/app/about/models/language.type";
 export const aboutPageLanguage: AboutLang = {
   en: {
     // page02
-    subTitle02:
-      "With the power of video, Studio Clip aims to outspread the beautiful culture of Myanmar",
+    subTitle02: {
+      first: "With the power of video,",
+      second: "Studio Clip aims to outspread the beautiful culture of Myanmar",
+    },
     subArticle02: {
       first:
         "We are dedicated to showcasing the diverse narratives of Myanmar through video, striving to convey their profound significance and greatness",
@@ -89,8 +91,10 @@ export const aboutPageLanguage: AboutLang = {
   },
   ko: {
     // page02
-    subTitle02:
-      "스튜디오 클립은 동영상의 힘으로 미얀마의 아름다운 문화와 전통을 전파 합니다",
+    subTitle02: {
+      first: "스튜디오 클립은 동영상의 힘으로",
+      second: "미얀마의 아름다운 문화와 전통을 전파 합니다",
+    },
     subArticle02: {
       first:
         "우리는 미얀마의 풍부한 이야기를 영상을 통해 그 깊이와 우수성을 알리는 데 최선을 다하며",
@@ -171,30 +175,32 @@ export const aboutPageLanguage: AboutLang = {
   },
   my: {
     // page02
-    subTitle02:
+    subTitle02: {
       //!
-      "With the power of video, Studio Clip aims to outspread the beautiful culture of Myanmar",
+      first: "Studio Clip ဟာ video တွေရဲ့ စွမ်းအားများနဲ့",
+      second: "မြန်မာ့ရိုးရာယဉ်ကျေးမှုများကို မျှဝေသွားမှာ ဖြစ်ပါတယ်",
+    },
     subArticle02: {
       first:
         //!
-        "We are dedicated to showcasing the diverse narratives of Myanmar through video, striving to convey their profound significance and greatness",
+        "Video များမှတစ်ဆင့် မြန်မာနိုင်ငံရဲ့ စုံလင်လှသော အကြောင်းအရာ အမျိုးမျိုးတို့ကို အကောင်းဆုံး တင်ဆက်သွားနိုင်ရန် ရည်စူးပြီး မြန်မာနိုင်ငံရဲ့",
       second:
         //!
-        "We are committed to support the continuous growth and development of Myanmar",
+        "တိုးတက်ဖွံဖြိုးရေးကိုလည်း ပံ့ပိုးကူညီပေးရန် ကြိုးစားသွားမှာဖြစ်ပါတယ်",
     },
     article02: {
       first:
         //!
-        "Based on our production experience in a variety of videos with numerous organizations and companies in Korea, we have produced 100% customized videos from planning to directing, filming and editing with professional skills, using high-end equipment",
+        "ကိုရီးယားနိုင်ငံရှိ များစွာသော အဖွဲ့အစည်းကုမ္ပဏီများနှင့် အတူတကွ လက်တွဲ လုပ်ဆောင်ခဲ့သော အတွေ့အကြုံများကို အခြေခံ၍ ရိုက်ကူးရေး အစီအစဥ်များ  ရေးဆွဲခြင်း၊ ရိုက်ကူးခြင်း၊ တည်းဖြတ်ခြင်းတို့ကို  ခေတ်မှီစက်ကိရိယာများဖြင့် ၁၀၀% စိတ်တိုင်းကျ ရိုက်ကူးထုတ်လုပ် ပေးလျှက်ရှိပါတယ်",
       second:
         //!
-        "As a result, we have completed 317 successful projects in various fields, including promotional videos, public service videos, and educational videos.",
+        "ရလဒ်များ အ​နေဖြင့်လည်း ကြော်ငြာ video များ၊ ပုဂ္ဂလိက အဖွဲ့အစည်းများရဲ့ video များ၊ ပညာ​ရေးဆိုင်ရာ video များ၊ အစရှိသဖြင့် အမျိုးမျိုး​သော နယ်ပယ်များတွင် ပ​ရောဂျက်​ပေါင်း ၃၁၇ ခုကို ​အောင်မြင်ပြီး​မြောက်နိုင်ခဲ့ပါတယ်",
       third:
         //!
-        "Established in Myanmar under the new name of “Studio Clip”, our mission is to bring joy, evoke emotion with great videos",
+        "မြန်မာနိုင်ငံမှာ “Studio Clip” ဆိုတဲ့ အမည်နဲ့ စတင်တည်​ထောင်ခဲ့တဲ့ ဒီကုမ္မဏီက​တော့ လူထုကို ​စိတ်ဝင်စားဖွယ်ရာ၊ ရင်သပ်ရှုမော ခံစားဖွယ်ရာ၊ စိတ်ကြည်နူးဖွယ်ရာ video ​ကောင်းများဖြင့် ​ပျော်ရွှင်မှုကို​ပေးနိုင်မည့် အပြင် မြန်မာ့ယဥ်​ကျေးမှုနှင့် စီးပွား​​ရေးလုပ်ငန်းများအ​ကြောင်းကို အသိ​ပေးနိုင်မယ့် video များစွာကို ဖန်တီးရန် ရည်ရွယ်ပါတယ်",
       fourth:
         //!
-        "We plan to create videos that promotes the beautiful culture of Myanmar and the thriving businesses",
+        "",
     },
     // page03
     article03: {
@@ -248,10 +254,10 @@ export const aboutPageLanguage: AboutLang = {
     subTitle03: {
       first:
         //!
-        "“Studio Clip” aims to help contribute the video technicians and everyone who want to",
+        "Studio Clip ဟာ Video Technician များစွာကို မွေးထုတ်ပေးပြီး မိမိတို့၏ ကိုယ်ပိုင် ",
       second:
         //!
-        "cultivate video production skill through education and promote themselves",
+        "brandများကို အခြားသူတို့အား အသိပေးကြော်ငြာလိုသူများ၏ အိပ်မက်များကို အကောင်အထည်ဖော်ကူညီပေးနိုင်ရန် ရည်ရွယ်ပါတယ်",
     },
     // page04
     title04: "customer",

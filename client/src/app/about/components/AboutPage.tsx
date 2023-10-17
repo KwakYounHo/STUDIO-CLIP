@@ -33,7 +33,7 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
           <div
             className={"relative lg:flex lg:gap-3 justify-center items-center"}
           >
-            <div className={"flex flex-col gap-7 lg:gap-16 max-w-[768px] p-2"}>
+            <div className={"flex flex-col gap-7 lg:gap-12 max-w-[768px] p-2"}>
               <div
                 id="title02"
                 className={"text-center mt-10 w-full flex flex-col gap-7"}
@@ -46,14 +46,16 @@ const AboutPage: React.FC<Props> = ({ lang }) => {
               </div>
               <div id="subTitle02" className={`text-center font-semibold`}>
                 <h2
-                  className={`before:content-['"'] before:text-appleSD before:text-4xl before:relative before:top-2 before:mr-3 before:leading-none after:content-['"'] after:text-appleSD after:text-4xl after:relative after:top-2 after:ml-3 after:leading-none text-2xl`}
+                  className={`before:content-['"'] before:text-appleSD before:text-4xl before:relative before:top-2 before:mr-3 before:leading-none after:content-['"'] after:text-appleSD after:text-4xl after:relative after:top-2 after:ml-3 after:leading-none text-2xl lg:text-3xl`}
                 >
-                  {aboutPageLanguage[lang].subTitle02}
+                  {aboutPageLanguage[lang].subTitle02.first}
+                  <br />
+                  {aboutPageLanguage[lang].subTitle02.second}
                 </h2>
               </div>
               <div
                 id="subArticle02"
-                className={`flex flex-col gap-3 text-center`}
+                className={`flex flex-col gap-3 text-center lg:text-xl`}
               >
                 <p>{aboutPageLanguage[lang].subArticle02.first}</p>
                 <p>{aboutPageLanguage[lang].subArticle02.second}</p>
