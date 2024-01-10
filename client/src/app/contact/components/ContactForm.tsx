@@ -19,7 +19,7 @@ type ContactInputType = {
 };
 
 const scriptURL: string =
-  "https://script.google.com/macros/s/AKfycbzEsJ6MG5MaeiOe-5gpwQrgKt1cAorj4Tf8O4sNiBxBXUCd32ISF8GBxqVmU3usoUQI/exec";
+  "https://script.google.com/macros/s/AKfycbzQRdzZ-XIs_ZjE06nxl-CX91i5MLBigxWtBocCnXps6G2GGx3M7d5K7lV1ZsOEWrYo/exec";
 
 //! component start
 const ContactForm: React.FC = () => {
