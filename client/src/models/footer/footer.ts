@@ -13,7 +13,7 @@ export const footer = {
       },
       {
         id: "tel",
-        num: "09 88413 9136",
+        num: "09 884 139 136",
       },
     ],
   },
